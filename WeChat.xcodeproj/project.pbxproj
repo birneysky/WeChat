@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		74372DB51C9EB14000A27DAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DB41C9EB14000A27DAD /* main.m */; };
 		74372DB81C9EB14000A27DAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DB71C9EB14000A27DAD /* AppDelegate.m */; };
-		74372DBB1C9EB14000A27DAD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DBA1C9EB14000A27DAD /* ViewController.m */; };
+		74372DBB1C9EB14000A27DAD /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DBA1C9EB14000A27DAD /* ChatViewController.m */; };
 		74372DBE1C9EB14000A27DAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74372DBC1C9EB14000A27DAD /* Main.storyboard */; };
 		74372DC01C9EB14000A27DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74372DBF1C9EB14000A27DAD /* Assets.xcassets */; };
 		74372DC31C9EB14000A27DAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74372DC11C9EB14000A27DAD /* LaunchScreen.storyboard */; };
 		74372DCE1C9EB14000A27DAD /* WeChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DCD1C9EB14000A27DAD /* WeChatTests.m */; };
 		74372DD91C9EB14000A27DAD /* WeChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DD81C9EB14000A27DAD /* WeChatUITests.m */; };
+		74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */; };
+		74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,8 @@
 		74372DB41C9EB14000A27DAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		74372DB61C9EB14000A27DAD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		74372DB71C9EB14000A27DAD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		74372DB91C9EB14000A27DAD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		74372DBA1C9EB14000A27DAD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		74372DB91C9EB14000A27DAD /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		74372DBA1C9EB14000A27DAD /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		74372DBD1C9EB14000A27DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74372DBF1C9EB14000A27DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74372DC21C9EB14000A27DAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,10 @@
 		74372DD41C9EB14000A27DAD /* WeChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74372DD81C9EB14000A27DAD /* WeChatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatUITests.m; sourceTree = "<group>"; };
 		74372DDA1C9EB14000A27DAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74372DE71C9EC3DA00A27DAD /* CALayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Additions.h"; sourceTree = "<group>"; };
+		74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
+		74372DEA1C9ED9B800A27DAD /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
+		74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		74372DA71C9EB14000A27DAD = {
 			isa = PBXGroup;
 			children = (
+				74372DE61C9EC3DA00A27DAD /* Category */,
 				74372DB21C9EB14000A27DAD /* WeChat */,
 				74372DCC1C9EB14000A27DAD /* WeChatTests */,
 				74372DD71C9EB14000A27DAD /* WeChatUITests */,
@@ -103,8 +110,10 @@
 			children = (
 				74372DB61C9EB14000A27DAD /* AppDelegate.h */,
 				74372DB71C9EB14000A27DAD /* AppDelegate.m */,
-				74372DB91C9EB14000A27DAD /* ViewController.h */,
-				74372DBA1C9EB14000A27DAD /* ViewController.m */,
+				74372DB91C9EB14000A27DAD /* ChatViewController.h */,
+				74372DBA1C9EB14000A27DAD /* ChatViewController.m */,
+				74372DEA1C9ED9B800A27DAD /* ChatTableViewController.h */,
+				74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */,
 				74372DBC1C9EB14000A27DAD /* Main.storyboard */,
 				74372DBF1C9EB14000A27DAD /* Assets.xcassets */,
 				74372DC11C9EB14000A27DAD /* LaunchScreen.storyboard */,
@@ -138,6 +147,15 @@
 				74372DDA1C9EB14000A27DAD /* Info.plist */,
 			);
 			path = WeChatUITests;
+			sourceTree = "<group>";
+		};
+		74372DE61C9EC3DA00A27DAD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				74372DE71C9EC3DA00A27DAD /* CALayer+Additions.h */,
+				74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74372DBB1C9EB14000A27DAD /* ViewController.m in Sources */,
+				74372DBB1C9EB14000A27DAD /* ChatViewController.m in Sources */,
+				74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */,
+				74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */,
 				74372DB81C9EB14000A27DAD /* AppDelegate.m in Sources */,
 				74372DB51C9EB14000A27DAD /* main.m in Sources */,
 			);
@@ -498,6 +518,7 @@
 				74372DDF1C9EB14000A27DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74372DE01C9EB14000A27DAD /* Build configuration list for PBXNativeTarget "WeChatTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +527,7 @@
 				74372DE21C9EB14000A27DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74372DE31C9EB14000A27DAD /* Build configuration list for PBXNativeTarget "WeChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +536,7 @@
 				74372DE51C9EB14000A27DAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

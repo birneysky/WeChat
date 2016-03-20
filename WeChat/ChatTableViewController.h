@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ChatTableViewController.h
 //  WeChat
 //
 //  Created by birneysky on 16/3/20.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ChatTableViewController : UITableViewController
 
 @end
-
