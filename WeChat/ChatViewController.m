@@ -14,6 +14,9 @@
 @interface ChatViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *bottomView;
+@property (weak, nonatomic) IBOutlet UIButton *voiceBtn;
+@property (weak, nonatomic) IBOutlet UIButton *expressionBtn;
+@property (weak, nonatomic) IBOutlet UIButton *pressTalkBtn;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewBottomConstraint;
@@ -78,14 +81,10 @@
 
 - (IBAction)expressionBtnClicked:(UIButton*)sender {
     if (LCBottomBarStateExpressionPanel == self.bottomState) {
-        [sender setImage:[UIImage imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
-        [sender setImage:[UIImage imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
         [self.textView becomeFirstResponder];
         self.bottomState = LCBottomBarStateInputText;
     }
     else{
-        [sender setImage:[UIImage imageNamed:@"ToolViewKeyboard"] forState:UIControlStateNormal];
-        [sender setImage:[UIImage imageNamed:@"ToolViewKeyboardHL"] forState:UIControlStateHighlighted];
         [self.textView resignFirstResponder];
         self.bottomState = LCBottomBarStateExpressionPanel;
     }
@@ -93,14 +92,10 @@
 
 - (IBAction)voiceBtnClicked:(UIButton*)sender {
     if (LCBottomBarStateAudioRecord == self.bottomState) {
-        [sender setImage:[UIImage imageNamed:@"ToolViewInputVoice"] forState:UIControlStateNormal];
-        [sender setImage:[UIImage imageNamed:@"ToolViewInputVoiceHL"] forState:UIControlStateHighlighted];
         [self.textView becomeFirstResponder];
         self.bottomState = LCBottomBarStateInputText;
     }
     else{
-        [sender setImage:[UIImage imageNamed:@"ToolViewKeyboard"] forState:UIControlStateNormal];
-        [sender setImage:[UIImage imageNamed:@"ToolViewKeyboardHL"] forState:UIControlStateHighlighted];
         [self.textView resignFirstResponder];
         self.bottomState = LCBottomBarStateAudioRecord;
     }
@@ -146,6 +141,30 @@
     }
     [self.view layoutIfNeeded];
     [UIView commitAnimations];
+    
+    if (LCBottomBarStateAudioRecord == self.bottomState) {
+        [self.voiceBtn setImage:[UIImage imageNamed:@"ToolViewKeyboard"] forState:UIControlStateNormal];
+        [self.voiceBtn setImage:[UIImage imageNamed:@"ToolViewKeyboardHL"] forState:UIControlStateHighlighted];
+        self.pressTalkBtn.hidden = NO;
+        self.textView.hidden = YES;
+
+    }
+    else{
+        [self.voiceBtn setImage:[UIImage imageNamed:@"ToolViewInputVoice"] forState:UIControlStateNormal];
+        [self.voiceBtn setImage:[UIImage imageNamed:@"ToolViewInputVoiceHL"] forState:UIControlStateHighlighted];
+        self.pressTalkBtn.hidden = YES;
+        self.textView.hidden = NO;
+
+    }
+    
+    if (LCBottomBarStateExpressionPanel == self.bottomState ) {
+        [self.expressionBtn setImage:[UIImage imageNamed:@"ToolViewKeyboard"] forState:UIControlStateNormal];
+        [self.expressionBtn setImage:[UIImage imageNamed:@"ToolViewKeyboardHL"] forState:UIControlStateHighlighted];
+    }
+    else{
+        [self.expressionBtn setImage:[UIImage imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
+        [self.expressionBtn setImage:[UIImage imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
+    }
     
 }
 

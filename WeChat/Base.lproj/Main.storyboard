@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hWI-M1-RK2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hWI-M1-RK2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ml3-T3-VBY" id="eDs-b0-EHp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -82,6 +82,24 @@
                                                 <action selector="expressionBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azf-1U-F30"/>
                                             </connections>
                                         </button>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3i-ZT-I9a">
+                                            <rect key="frame" x="52" y="8" width="452" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="cuF-dz-zup"/>
+                                            </constraints>
+                                            <state key="normal" title="按住说话"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                    <real key="value" value="0.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
+                                                    <color key="value" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p7K-5E-tSX">
                                             <rect key="frame" x="52" y="8" width="452" height="34"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,14 +112,20 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
                                                     <color key="value" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </textView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="B3i-ZT-I9a" firstAttribute="top" secondItem="ONS-GJ-a59" secondAttribute="top" constant="8" id="8F1-Zq-0oU"/>
                                         <constraint firstItem="p7K-5E-tSX" firstAttribute="leading" secondItem="N8J-cf-QWk" secondAttribute="trailing" constant="8" id="GVS-Ni-YtP"/>
                                         <constraint firstItem="q9k-3c-0qc" firstAttribute="leading" secondItem="p7K-5E-tSX" secondAttribute="trailing" constant="8" id="L6q-BR-vFy"/>
                                         <constraint firstItem="0z2-Lt-The" firstAttribute="top" secondItem="ONS-GJ-a59" secondAttribute="top" constant="7" id="NbF-Uk-PXH"/>
+                                        <constraint firstItem="B3i-ZT-I9a" firstAttribute="leading" secondItem="N8J-cf-QWk" secondAttribute="trailing" constant="8" id="Pvt-Nw-isB"/>
                                         <constraint firstAttribute="trailing" secondItem="0z2-Lt-The" secondAttribute="trailing" constant="8" id="Ut1-FA-RbU"/>
+                                        <constraint firstItem="q9k-3c-0qc" firstAttribute="leading" secondItem="B3i-ZT-I9a" secondAttribute="trailing" constant="8" id="cQ2-NC-uYG"/>
                                         <constraint firstItem="q9k-3c-0qc" firstAttribute="top" secondItem="ONS-GJ-a59" secondAttribute="top" constant="7" id="dFu-fY-k3W"/>
                                         <constraint firstItem="N8J-cf-QWk" firstAttribute="top" secondItem="ONS-GJ-a59" secondAttribute="top" constant="7" id="hYv-Ng-yVY"/>
                                         <constraint firstItem="p7K-5E-tSX" firstAttribute="top" secondItem="ONS-GJ-a59" secondAttribute="top" constant="8" id="iMr-Va-ubk"/>
@@ -141,8 +165,11 @@
                         <outlet property="bottomView" destination="pMx-XL-Uvv" id="cio-uX-b06"/>
                         <outlet property="bottomViewBottomConstraint" destination="yNS-MT-OHH" id="zPP-TA-f06"/>
                         <outlet property="chatTVC" destination="49H-Y8-Hjb" id="y8N-SU-7bJ"/>
+                        <outlet property="expressionBtn" destination="q9k-3c-0qc" id="hno-h2-BMM"/>
+                        <outlet property="pressTalkBtn" destination="B3i-ZT-I9a" id="Yat-St-zhW"/>
                         <outlet property="tableViewBottomConstraint" destination="lcG-Xt-fpH" id="sdv-5e-ar6"/>
                         <outlet property="textView" destination="p7K-5E-tSX" id="FBX-O5-7mN"/>
+                        <outlet property="voiceBtn" destination="N8J-cf-QWk" id="2zk-3C-fdH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

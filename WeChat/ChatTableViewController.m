@@ -29,7 +29,7 @@
 {
     if (!_arraySource) {
         _arraySource = [[NSMutableArray alloc] initWithCapacity:100];
-        for ( int i = 0; i < 100; i++) {
+        for ( int i = 0; i < 8; i++) {
             [_arraySource addObject:[NSString stringWithFormat:@"%d",i]];
         }
     }
