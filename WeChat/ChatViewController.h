@@ -12,12 +12,15 @@ typedef NS_ENUM(NSUInteger,LCBottomBarState){
     LCBottomBarStateNormal          = 0,
     LCBottomBarStateAudioRecord     = 1 << 0,
     LCBottomBarStateExpressionPanel = 1 << 1,
-    LCBottomBarStateCorePanel       = 1 << 2,
+    LCBottomBarStateExtraPanel       = 1 << 2,
     LCBottomBarStateInputText       = 1 << 3
 };
 
 @interface ChatViewController : UIViewController
 
+@property (nonatomic, assign) LCBottomBarState bottomState;
+
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 

@@ -17,6 +17,9 @@
 		74372DD91C9EB14000A27DAD /* WeChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DD81C9EB14000A27DAD /* WeChatUITests.m */; };
 		74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */; };
 		74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */; };
+		DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */; };
+		DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */; };
+		DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,13 @@
 		74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
 		74372DEA1C9ED9B800A27DAD /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
 		74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
+		DBAE8A081C9F94550030BF18 /* ChatExtraPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExtraPanel.h; sourceTree = "<group>"; };
+		DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatExtraPanel.m; sourceTree = "<group>"; };
+		DBAE8A0B1C9F94790030BF18 /* ChatExpressionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExpressionPanel.h; sourceTree = "<group>"; };
+		DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatExpressionPanel.m; sourceTree = "<group>"; };
+		DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChat.pch; sourceTree = "<group>"; };
+		DBAE8A0F1C9FD0D20030BF18 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,7 @@
 		74372DA71C9EB14000A27DAD = {
 			isa = PBXGroup;
 			children = (
+				DBAE8A071C9F93780030BF18 /* Views */,
 				74372DE61C9EC3DA00A27DAD /* Category */,
 				74372DB21C9EB14000A27DAD /* WeChat */,
 				74372DCC1C9EB14000A27DAD /* WeChatTests */,
@@ -119,6 +130,7 @@
 				74372DC11C9EB14000A27DAD /* LaunchScreen.storyboard */,
 				74372DC41C9EB14000A27DAD /* Info.plist */,
 				74372DB31C9EB14000A27DAD /* Supporting Files */,
+				DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */,
 			);
 			path = WeChat;
 			sourceTree = "<group>";
@@ -154,8 +166,21 @@
 			children = (
 				74372DE71C9EC3DA00A27DAD /* CALayer+Additions.h */,
 				74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */,
+				DBAE8A0F1C9FD0D20030BF18 /* UIView+Frame.h */,
+				DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		DBAE8A071C9F93780030BF18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBAE8A081C9F94550030BF18 /* ChatExtraPanel.h */,
+				DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */,
+				DBAE8A0B1C9F94790030BF18 /* ChatExpressionPanel.h */,
+				DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,11 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */,
 				74372DBB1C9EB14000A27DAD /* ChatViewController.m in Sources */,
 				74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */,
 				74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */,
 				74372DB81C9EB14000A27DAD /* AppDelegate.m in Sources */,
 				74372DB51C9EB14000A27DAD /* main.m in Sources */,
+				DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */,
+				DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,10 +461,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = WeChat/WeChat.pch;
 				INFOPLIST_FILE = WeChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.birneysky.WeChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yy.H264;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d2a4ac45-b3d7-483c-9965-b352d55724e7";
 			};
 			name = Debug;
 		};
@@ -444,10 +474,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = WeChat/WeChat.pch;
 				INFOPLIST_FILE = WeChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.birneysky.WeChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yy.H264;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d2a4ac45-b3d7-483c-9965-b352d55724e7";
 			};
 			name = Release;
 		};

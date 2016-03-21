@@ -8,11 +8,11 @@
 
 #import "ChatViewController.h"
 #import "ChatTableViewController.h"
+#import "ChatExtraPanel.h"
 
 @interface ChatViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *bottomView;
-@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewBottomConstraint;
@@ -20,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet ChatTableViewController *chatTVC;
 
 @property (nonatomic, assign) CGFloat keyboardHeight;
-@property (nonatomic, assign) LCBottomBarState bottomState;
+@property (nonatomic, strong) ChatExtraPanel* extraPanel;
 
 @end
 
@@ -33,13 +33,35 @@
     [self updateBottomViewState];
 }
 
+- (ChatExtraPanel*)extraPanel
+{
+    if (!_extraPanel) {
+        _extraPanel = [[ChatExtraPanel alloc] initWithFrame:CGRectMake(0, SCREENHEIGHT, SCREENWIDTH, 240)];
+    }
+    return _extraPanel;
+}
+
 #pragma mark - *** Init ***
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addChildViewController:self.chatTVC];
+    [self.view addSubview:self.extraPanel];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+#pragma mark - *** Target Action ***
+- (IBAction)moreBtnClicked:(id)sender {
+    
+    self.bottomState = LCBottomBarStateExtraPanel;
+}
+
+- (IBAction)expressionBtnClicked:(id)sender {
+}
+
+- (IBAction)voiceBtnClicked:(id)sender {
+}
 #pragma mark - *** Helper ***
 - (void)updateBottomViewState
 {
@@ -51,12 +73,15 @@
         case LCBottomBarStateNormal:
             self.bottomViewBottomConstraint.constant = 0 ;
             self.tableViewBottomConstraint.constant = 0;
+            self.extraPanel.y = SCREENHEIGHT;
             break;
         case LCBottomBarStateAudioRecord:
             break;
         case LCBottomBarStateExpressionPanel:
             break;
-        case LCBottomBarStateCorePanel:
+        case LCBottomBarStateExtraPanel:
+            self.extraPanel.y = SCREENHEIGHT - self.extraPanel.height;
+            self.bottomViewBottomConstraint.constant = self.extraPanel.height;
             break;
         case LCBottomBarStateInputText:
             self.bottomViewBottomConstraint.constant = self.keyboardHeight ;

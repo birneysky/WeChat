@@ -7,6 +7,7 @@
 //
 
 #import "ChatTableViewController.h"
+#import "ChatViewController.h"
 
 @interface ChatTableViewController ()
 
@@ -35,10 +36,15 @@
     return _arraySource;
 }
 
+- (ChatViewController*)chatVC
+{
+    return (ChatViewController*)self.parentViewController;
+}
+
 #pragma mark - *** Init View ***
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"MessageCell"];
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"MessageCell"];
 }
 
 
@@ -110,5 +116,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark - *** UIScrollViewDelegate ***
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [[self chatVC] setBottomState:LCBottomBarStateNormal];
+    [[self chatVC].textView resignFirstResponder];
+}
 
 @end

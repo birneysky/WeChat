@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hWI-M1-RK2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hWI-M1-RK2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -25,14 +25,14 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ml3-T3-VBY" id="eDs-b0-EHp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="rect" keyPath="contentInset">
-                                        <rect key="value" x="64" y="0.0" width="44" height="0.0"/>
+                                        <rect key="value" x="0.0" y="0.0" width="44" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -54,6 +54,9 @@
                                             </constraints>
                                             <state key="normal" image="ToolViewInputVoice"/>
                                             <state key="highlighted" image="ToolViewInputVoiceHL"/>
+                                            <connections>
+                                                <action selector="voiceBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yeh-o6-kr1"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0z2-Lt-The">
                                             <rect key="frame" x="556" y="7" width="36" height="36"/>
@@ -63,6 +66,9 @@
                                             </constraints>
                                             <state key="normal" image="ToolViewMore"/>
                                             <state key="highlighted" image="ToolViewMoreHL"/>
+                                            <connections>
+                                                <action selector="moreBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SJe-No-HdP"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9k-3c-0qc">
                                             <rect key="frame" x="512" y="7" width="36" height="36"/>
@@ -72,6 +78,9 @@
                                             </constraints>
                                             <state key="normal" image="ToolViewEmotion"/>
                                             <state key="highlighted" image="ToolViewEmotionHL"/>
+                                            <connections>
+                                                <action selector="expressionBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azf-1U-F30"/>
+                                            </connections>
                                         </button>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p7K-5E-tSX">
                                             <rect key="frame" x="52" y="8" width="452" height="34"/>
