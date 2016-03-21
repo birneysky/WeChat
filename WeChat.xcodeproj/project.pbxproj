@@ -20,6 +20,7 @@
 		DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */; };
 		DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */; };
 		DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */; };
+		DBAE8A131C9FEA450030BF18 /* Expression_String.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBAE8A121C9FEA450030BF18 /* Expression_String.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChat.pch; sourceTree = "<group>"; };
 		DBAE8A0F1C9FD0D20030BF18 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		DBAE8A121C9FEA450030BF18 /* Expression_String.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expression_String.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				74372DC41C9EB14000A27DAD /* Info.plist */,
 				74372DB31C9EB14000A27DAD /* Supporting Files */,
 				DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */,
+				DBAE8A121C9FEA450030BF18 /* Expression_String.plist */,
 			);
 			path = WeChat;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				74372DC31C9EB14000A27DAD /* LaunchScreen.storyboard in Resources */,
 				74372DC01C9EB14000A27DAD /* Assets.xcassets in Resources */,
 				74372DBE1C9EB14000A27DAD /* Main.storyboard in Resources */,
+				DBAE8A131C9FEA450030BF18 /* Expression_String.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
