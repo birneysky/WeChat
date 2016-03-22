@@ -99,7 +99,6 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"content offset = %@",NSStringFromCGPoint(scrollView.contentOffset));
     NSUInteger pageIndex = scrollView.contentOffset.x / self.width;
     self.pageControl.currentPage = pageIndex;
 }
