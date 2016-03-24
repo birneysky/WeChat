@@ -112,7 +112,6 @@
 #pragma mark - *** UIScrollViewDelegate  ***
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"contentOffset = %@",NSStringFromCGPoint(scrollView.contentOffset));
     NSUInteger pageIndex = scrollView.contentOffset.x / self.frame.size.width;
     self.pageControl.currentPage = pageIndex;
 }
