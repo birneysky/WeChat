@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Message" representedClassName="Message" syncable="YES">
+        <attribute name="fromUserID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="messageContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toUserID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MessageSession" inverseName="messages" inverseEntity="MessageSession" syncable="YES"/>
+    </entity>
+    <entity name="MessageSession" representedClassName="MessageSession" syncable="YES">
+        <attribute name="groupID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="groupType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="remoteUserID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sendTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Message" inverseName="session" inverseEntity="Message" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MessageSession" positionX="-2322" positionY="351" width="128" height="118"/>
+        <element name="Message" positionX="-2052" positionY="342" width="128" height="103"/>
+    </elements>
+</model>

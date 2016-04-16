@@ -10,13 +10,14 @@
 #define WeChat_pch
 
 #import "UIView+Frame.h"
+#import "CoreDataHelper.h"
 
 #ifdef DEBUG
 #define DebugLog(fmt,...) NSLog(@"%s %d "fmt,__FUNCTION__,__LINE__,__VA_ARGS__)
-#define TRACE() NSLog(@"%s %d",__FUNCTION__,__LINE__)
+#define TRACE(info) NSLog(@"%s %d "info,__FUNCTION__,__LINE__)
 #else
 #define DebugLog(fmt,...)
-#define TRACE()
+#define TRACE(info)
 #endif
 
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]

@@ -17,6 +17,14 @@
 		74372DD91C9EB14000A27DAD /* WeChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DD81C9EB14000A27DAD /* WeChatUITests.m */; };
 		74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */; };
 		74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */; };
+		74CB658D1CC20D680071E1A3 /* WeChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74CB658B1CC20D680071E1A3 /* WeChat.xcdatamodeld */; };
+		74CB65901CC21F5C0071E1A3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB658F1CC21F5C0071E1A3 /* CoreDataHelper.m */; };
+		74CB65A91CC2421D0071E1A3 /* Message+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65A21CC2421D0071E1A3 /* Message+CoreDataProperties.m */; };
+		74CB65AA1CC2421D0071E1A3 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65A41CC2421D0071E1A3 /* Message.m */; };
+		74CB65AB1CC2421D0071E1A3 /* MessageSession+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65A61CC2421D0071E1A3 /* MessageSession+CoreDataProperties.m */; };
+		74CB65AC1CC2421D0071E1A3 /* MessageSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65A81CC2421D0071E1A3 /* MessageSession.m */; };
+		74CB65AF1CC242C10071E1A3 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */; };
+		74CB65B21CC244210071E1A3 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65B11CC244210071E1A3 /* ChatSessionViewController.m */; };
 		DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */; };
 		DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */; };
 		DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */; };
@@ -61,6 +69,21 @@
 		74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
 		74372DEA1C9ED9B800A27DAD /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
 		74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
+		74CB658C1CC20D680071E1A3 /* WeChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeChat.xcdatamodel; sourceTree = "<group>"; };
+		74CB658E1CC21F5C0071E1A3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		74CB658F1CC21F5C0071E1A3 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		74CB65A11CC2421D0071E1A3 /* Message+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Message+CoreDataProperties.h"; path = "../../Message+CoreDataProperties.h"; sourceTree = "<group>"; };
+		74CB65A21CC2421D0071E1A3 /* Message+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Message+CoreDataProperties.m"; path = "../../Message+CoreDataProperties.m"; sourceTree = "<group>"; };
+		74CB65A31CC2421D0071E1A3 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Message.h; path = ../../Message.h; sourceTree = "<group>"; };
+		74CB65A41CC2421D0071E1A3 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Message.m; path = ../../Message.m; sourceTree = "<group>"; };
+		74CB65A51CC2421D0071E1A3 /* MessageSession+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MessageSession+CoreDataProperties.h"; path = "../../MessageSession+CoreDataProperties.h"; sourceTree = "<group>"; };
+		74CB65A61CC2421D0071E1A3 /* MessageSession+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MessageSession+CoreDataProperties.m"; path = "../../MessageSession+CoreDataProperties.m"; sourceTree = "<group>"; };
+		74CB65A71CC2421D0071E1A3 /* MessageSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageSession.h; path = ../../MessageSession.h; sourceTree = "<group>"; };
+		74CB65A81CC2421D0071E1A3 /* MessageSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageSession.m; path = ../../MessageSession.m; sourceTree = "<group>"; };
+		74CB65AD1CC242C10071E1A3 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		74CB65B01CC244210071E1A3 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
+		74CB65B11CC244210071E1A3 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
 		DBAE8A081C9F94550030BF18 /* ChatExtraPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExtraPanel.h; sourceTree = "<group>"; };
 		DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatExtraPanel.m; sourceTree = "<group>"; };
 		DBAE8A0B1C9F94790030BF18 /* ChatExpressionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExpressionPanel.h; sourceTree = "<group>"; };
@@ -99,6 +122,7 @@
 		74372DA71C9EB14000A27DAD = {
 			isa = PBXGroup;
 			children = (
+				748F2E631CC20CDB00B4E2CB /* CoreData */,
 				DBAE8A071C9F93780030BF18 /* Views */,
 				74372DE61C9EC3DA00A27DAD /* Category */,
 				74372DB21C9EB14000A27DAD /* WeChat */,
@@ -123,6 +147,8 @@
 			children = (
 				74372DB61C9EB14000A27DAD /* AppDelegate.h */,
 				74372DB71C9EB14000A27DAD /* AppDelegate.m */,
+				74CB65B01CC244210071E1A3 /* ChatSessionViewController.h */,
+				74CB65B11CC244210071E1A3 /* ChatSessionViewController.m */,
 				74372DB91C9EB14000A27DAD /* ChatViewController.h */,
 				74372DBA1C9EB14000A27DAD /* ChatViewController.m */,
 				74372DEA1C9ED9B800A27DAD /* ChatTableViewController.h */,
@@ -173,6 +199,34 @@
 				DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		748F2E631CC20CDB00B4E2CB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				74CB65911CC2385F0071E1A3 /* Models */,
+				74CB658B1CC20D680071E1A3 /* WeChat.xcdatamodeld */,
+				74CB658E1CC21F5C0071E1A3 /* CoreDataHelper.h */,
+				74CB658F1CC21F5C0071E1A3 /* CoreDataHelper.m */,
+				74CB65AD1CC242C10071E1A3 /* CoreDataTableViewController.h */,
+				74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		74CB65911CC2385F0071E1A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74CB65A11CC2421D0071E1A3 /* Message+CoreDataProperties.h */,
+				74CB65A21CC2421D0071E1A3 /* Message+CoreDataProperties.m */,
+				74CB65A31CC2421D0071E1A3 /* Message.h */,
+				74CB65A41CC2421D0071E1A3 /* Message.m */,
+				74CB65A51CC2421D0071E1A3 /* MessageSession+CoreDataProperties.h */,
+				74CB65A61CC2421D0071E1A3 /* MessageSession+CoreDataProperties.m */,
+				74CB65A71CC2421D0071E1A3 /* MessageSession.h */,
+				74CB65A81CC2421D0071E1A3 /* MessageSession.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DBAE8A071C9F93780030BF18 /* Views */ = {
@@ -318,13 +372,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */,
+				74CB65AB1CC2421D0071E1A3 /* MessageSession+CoreDataProperties.m in Sources */,
 				74372DBB1C9EB14000A27DAD /* ChatViewController.m in Sources */,
 				74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */,
 				74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */,
 				74372DB81C9EB14000A27DAD /* AppDelegate.m in Sources */,
 				74372DB51C9EB14000A27DAD /* main.m in Sources */,
+				74CB65AA1CC2421D0071E1A3 /* Message.m in Sources */,
+				74CB65A91CC2421D0071E1A3 /* Message+CoreDataProperties.m in Sources */,
+				74CB65B21CC244210071E1A3 /* ChatSessionViewController.m in Sources */,
 				DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */,
 				DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */,
+				74CB65901CC21F5C0071E1A3 /* CoreDataHelper.m in Sources */,
+				74CB65AC1CC2421D0071E1A3 /* MessageSession.m in Sources */,
+				74CB658D1CC20D680071E1A3 /* WeChat.xcdatamodeld in Sources */,
+				74CB65AF1CC242C10071E1A3 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +637,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		74CB658B1CC20D680071E1A3 /* WeChat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				74CB658C1CC20D680071E1A3 /* WeChat.xcdatamodel */,
+			);
+			currentVersion = 74CB658C1CC20D680071E1A3 /* WeChat.xcdatamodel */;
+			path = WeChat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 74372DA81C9EB14000A27DAD /* Project object */;
 }
