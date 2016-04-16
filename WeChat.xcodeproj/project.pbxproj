@@ -530,9 +530,9 @@
 				GCC_PREFIX_HEADER = WeChat/WeChat.pch;
 				INFOPLIST_FILE = WeChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yy.H264;
+				PRODUCT_BUNDLE_IDENTIFIER = com.v2tech.commbarEnt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d2a4ac45-b3d7-483c-9965-b352d55724e7";
+				PROVISIONING_PROFILE = "e4c6fe16-2704-499b-b8b4-04db72022fd9";
 			};
 			name = Debug;
 		};
@@ -543,9 +543,9 @@
 				GCC_PREFIX_HEADER = WeChat/WeChat.pch;
 				INFOPLIST_FILE = WeChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yy.H264;
+				PRODUCT_BUNDLE_IDENTIFIER = com.v2tech.commbarEnt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d2a4ac45-b3d7-483c-9965-b352d55724e7";
+				PROVISIONING_PROFILE = "e4c6fe16-2704-499b-b8b4-04db72022fd9";
 			};
 			name = Release;
 		};
