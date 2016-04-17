@@ -76,7 +76,7 @@
 #pragma mark - *** api ***
 - (void)start
 {
-    NSArray* usrIDs = @[@100001,@100002,@100003/*,@100004,@100005,@100006,@100007,@100008,@100009,@100010,@100011,@100012,@100013,@100014,@100015,@100016,@100017,@100018,@100019,@100020,@100021,@100022,@100023,@100024,@100025,@100026,@100027,@100028*/];
+    NSArray* usrIDs = @[@100001,@100002,@100003,@100004,@100005,@100006,@100007,@100008,@100009,@100010,@100011,@100012,@100013,@100014,@100015,@100016,@100017,@100018,@100019,@100020,@100021,@100022,@100023,@100024,@100025,@100026,@100027,@100028];
     self.runing = YES;
     
     __weak DataFactory* weakSelf = self;
@@ -89,7 +89,7 @@
                 NSInteger index = arc4random() % [usrIDs count];
                 
                 [weakSelf produceMessages:usrIDs[index] index:count++];
-                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1.0f]];
             }
 
         }
