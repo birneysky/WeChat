@@ -16,11 +16,19 @@ typedef NS_ENUM(NSUInteger,LCBottomBarState){
     LCBottomBarStateInputText       = 1 << 3
 };
 
+@class MessageSession;
+
 @interface ChatViewController : UIViewController
 
 @property (nonatomic, assign) LCBottomBarState bottomState;
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+
+@property (nonatomic, strong) NSNumber* groupID;
+
+@property (nonatomic, strong) NSNumber* userID;
+
+@property (nonatomic, strong) MessageSession* session;
 
 @end
 

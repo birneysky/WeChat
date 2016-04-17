@@ -53,7 +53,7 @@
 - (void) performFetch
 {
     if (self.frc) {
-        [self.frc.managedObjectContext performBlockAndWait:^{
+        [self.frc.managedObjectContext performBlock:^{
             NSError* error = nil;
             if (![self.frc performFetch:&error]) {
                 DebugLog(@"Failed to perform fetch : %@",error);

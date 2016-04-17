@@ -6,8 +6,13 @@
 //  Copyright © 2016年 birneysky. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface ChatTableViewController : UITableViewController
+#import "CoreDataTableViewController.h"
+
+@class MessageSession;
+
+@interface ChatTableViewController : CoreDataTableViewController
+
+@property (nonatomic,weak) MessageSession* session;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "ChatTableViewController.h"
 #import "ChatViewController.h"
+#import "CoreDataHelper.h"
+#import "Message.h"
 
 @interface ChatTableViewController ()
 
@@ -44,32 +46,75 @@
 #pragma mark - *** Init View ***
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self configureFetch];
+//    [self performFetch];
     //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"MessageCell"];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(performFetch)
+                                                 name:@"SomethingChanged"
+                                               object:nil];
+}
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SomethingChanged" object:nil];
+}
+
+- (void)configureFetch
+{
+    NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"fromUserID" ascending:YES]];
+    NSPredicate* predict = [NSPredicate predicateWithFormat:@"session == %@",self.session];
+    [fetchRequest setPredicate:predict];
+    [fetchRequest setFetchBatchSize:50];
+    CoreDataHelper* helper = [CoreDataHelper defaultHelper];
+    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.defaultContext sectionNameKeyPath:nil cacheName:nil];
+    self.frc.delegate = self;
+}
+
+#pragma makr - *** Helper ***
+- (void)setSession:(MessageSession *)session
+{
+    _session = session;
+    [self configureFetch];
+    [self performFetch];
+}
+
+- (void) performFetch
+{
+    if (self.frc) {
+        [self.frc.managedObjectContext performBlock:^{
+            NSError* error = nil;
+            if (![self.frc performFetch:&error]) {
+                DebugLog(@"Failed to perform fetch : %@",error);
+            }
+            [self.tableView reloadData];
+            NSUInteger count =  [[self.frc.sections objectAtIndex:0] numberOfObjects];
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        }];
+    }
+}
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arraySource.count;
-}
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
     if (!cell) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
     }
-    
-    cell.textLabel.text = self.arraySource[indexPath.row];
-    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Message* message = [self.frc objectAtIndexPath:indexPath];
+    cell.textLabel.text = message.content;
 }
 
 

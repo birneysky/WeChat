@@ -10,6 +10,7 @@
 #import "ChatTableViewController.h"
 #import "ChatExtraPanel.h"
 #import "ChatExpressionPanel.h"
+#import "MessageSession.h"
 
 @interface ChatViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -63,6 +64,8 @@
     [self.view addSubview:self.expressionPanel];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    self.chatTVC.session = self.session;
 }
 
 #pragma mark - *** Target Action ***
@@ -174,8 +177,6 @@
 {
     CGRect keyboardRect;
     [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
-    
-
     self.keyboardHeight = keyboardRect.size.height;
     self.bottomState = LCBottomBarStateInputText;
 }

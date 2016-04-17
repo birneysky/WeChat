@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7420A45F1CC369D8003033AC /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7420A45E1CC369D8003033AC /* DataFactory.m */; };
 		74372DB51C9EB14000A27DAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DB41C9EB14000A27DAD /* main.m */; };
 		74372DB81C9EB14000A27DAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DB71C9EB14000A27DAD /* AppDelegate.m */; };
 		74372DBB1C9EB14000A27DAD /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DBA1C9EB14000A27DAD /* ChatViewController.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7420A45D1CC369D8003033AC /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFactory.h; sourceTree = "<group>"; };
+		7420A45E1CC369D8003033AC /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFactory.m; sourceTree = "<group>"; };
 		74372DB01C9EB14000A27DAD /* WeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74372DB41C9EB14000A27DAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		74372DB61C9EB14000A27DAD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				74CB658F1CC21F5C0071E1A3 /* CoreDataHelper.m */,
 				74CB65AD1CC242C10071E1A3 /* CoreDataTableViewController.h */,
 				74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */,
+				7420A45D1CC369D8003033AC /* DataFactory.h */,
+				7420A45E1CC369D8003033AC /* DataFactory.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				74B90DC91CC32153004C4CA6 /* Message.m in Sources */,
 				74B90DCB1CC32153004C4CA6 /* MessageSession.m in Sources */,
 				74CB65AF1CC242C10071E1A3 /* CoreDataTableViewController.m in Sources */,
+				7420A45F1CC369D8003033AC /* DataFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
