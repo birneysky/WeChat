@@ -7,6 +7,7 @@
 //
 
 #import "Message.h"
+#import "MessageSession.h"
 
 @implementation Message
 

@@ -19,16 +19,22 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *remoteUserID;
 @property (nullable, nonatomic, retain) NSDate *sendTime;
 @property (nullable, nonatomic, retain) NSNumber *groupType;
-@property (nullable, nonatomic, retain) NSSet<Message *> *messages;
+@property (nullable, nonatomic, retain) NSOrderedSet<Message *> *messages;
 
 @end
 
 @interface MessageSession (CoreDataGeneratedAccessors)
 
+- (void)insertObject:(Message *)value inMessagesAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromMessagesAtIndex:(NSUInteger)idx;
+- (void)insertMessages:(NSArray<Message *> *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeMessagesAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInMessagesAtIndex:(NSUInteger)idx withObject:(Message *)value;
+- (void)replaceMessagesAtIndexes:(NSIndexSet *)indexes withMessages:(NSArray<Message *> *)values;
 - (void)addMessagesObject:(Message *)value;
 - (void)removeMessagesObject:(Message *)value;
-- (void)addMessages:(NSSet<Message *> *)values;
-- (void)removeMessages:(NSSet<Message *> *)values;
+- (void)addMessages:(NSOrderedSet<Message *> *)values;
+- (void)removeMessages:(NSOrderedSet<Message *> *)values;
 
 @end
 
