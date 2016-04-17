@@ -14,7 +14,7 @@
 @implementation Message (CoreDataProperties)
 
 @dynamic fromUserID;
-@dynamic messageContent;
+@dynamic content;
 @dynamic toUserID;
 @dynamic session;
 

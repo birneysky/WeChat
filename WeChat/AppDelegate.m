@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "CoreDataHelper.h"
+#import "Message.h"
+#import "MessageSession.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    CoreDataHelper* helper = [CoreDataHelper defaultHelper];
+    MessageSession* session = [NSEntityDescription insertNewObjectForEntityForName:@"MessageSession" inManagedObjectContext:helper.backgroundContext];
+    Message* message = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:helper.backgroundContext];
+    
+    /*
+     @property (nullable, nonatomic, retain) NSNumber *groupID;
+     @property (nullable, nonatomic, retain) NSNumber *remoteUserID;
+     @property (nullable, nonatomic, retain) NSDate *sendTime;
+     @property (nullable, nonatomic, retain) NSNumber *groupType;
+     @property (nullable, nonatomic, retain) NSOrderedSet<Message *> *messages;*/
+    /*@property (nullable, nonatomic, retain) NSNumber *fromUserID;
+     @property (nullable, nonatomic, retain) NSString *content;
+     @property (nullable, nonatomic, retain) NSNumber *toUserID;
+     @property (nullable, nonatomic, retain) MessageSession *session;*/
+    
+    session.groupID = @0;
+    session.remoteUserID = @100001;
+    session.sendTime = [NSDate date];
+    session.groupType = @0;
+    
+    message.fromUserID = @100001;
+    message.content = @"are you ok";
+    message.toUserID = @100;
+    message.session = session;
+    
+    [helper saveBackgroundContext];
+    
+
     return YES;
 }
 

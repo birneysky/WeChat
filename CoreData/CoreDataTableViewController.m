@@ -9,7 +9,7 @@
 #import "CoreDataTableViewController.h"
 #import <CoreData/CoreData.h>
 
-@interface CoreDataTableViewController () <NSFetchedResultsControllerDelegate>
+@interface CoreDataTableViewController () 
 
 @end
 

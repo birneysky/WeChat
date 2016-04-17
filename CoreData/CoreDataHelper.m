@@ -7,7 +7,6 @@
 //
 
 #import "CoreDataHelper.h"
-#import <CoreData/CoreData.h>
 
 #define STOREFILENAME @"WeChat.sqlite"
 
@@ -50,6 +49,13 @@ static CoreDataHelper* helper;
     _defaultContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     _coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
     [_defaultContext setPersistentStoreCoordinator:_coordinator];
+    
+    _backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [_backgroundContext performBlockAndWait:^{
+        [_backgroundContext setPersistentStoreCoordinator:_coordinator];
+        [_backgroundContext setUndoManager:nil];
+    }];
+    
     NSDictionary* options = @{NSSQLitePragmasOption:@{@"journal_mode":@"DELETE"},
                              NSMigratePersistentStoresAutomaticallyOption:@YES,
                              NSInferMappingModelAutomaticallyOption:@YES
@@ -66,7 +72,7 @@ static CoreDataHelper* helper;
 
 - (NSString*)appDocumentPath
 {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) lastObject];
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 - (NSURL*)appStorePath
@@ -99,11 +105,11 @@ static CoreDataHelper* helper;
 
 #pragma mark - *** Saving ***
 
-- (void)saveDefaultContext
+- (void)saveContext:(NSManagedObjectContext*)context
 {
-    if ([self.defaultContext hasChanges]) {
+    if ([context hasChanges]) {
         NSError* error;
-        if ([self.defaultContext save:&error]) {
+        if ([context save:&error]) {
             TRACE(@"保存改变的数据到持久化存储区");
         }
         else{
@@ -113,6 +119,15 @@ static CoreDataHelper* helper;
     else{
         TRACE(@"数据没有变化，不需要保存");
     }
+}
+
+- (void)saveDefaultContext
+{
+    [self saveContext:self.defaultContext];
+}
+
+- (void)saveBackgroundContext{
+    [self saveContext:self.backgroundContext];
 }
 
 @end

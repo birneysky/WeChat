@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface CoreDataHelper : NSObject
 
@@ -26,14 +27,18 @@
  持久化存储协调器，协调器与存储区打交道实现数据同步。托管上下文持有一个持久化协调器的实例*/
 @property (nonatomic,readonly) NSManagedObjectContext* defaultContext;
 
+@property (nonatomic,readonly) NSManagedObjectContext* backgroundContext;
+
 /*持久化存储协调器，是通过托管对象模型进行实例化的，这主要是由于协调器需要和托管上下文还有存储区交互，所以需要知道实体描述信息，才能正确传达信息。还有是因为协调器在初始化时会检测指定路径下的存储区有没有创建，如果没有则进行创建
  协调器中可以包含多个持久化存储区（数据库）
  */
 @property (nonatomic,readonly) NSPersistentStoreCoordinator* coordinator;
 
-
++ (CoreDataHelper*)defaultHelper;
 
 
 - (void)saveDefaultContext;
+
+- (void)saveBackgroundContext;
 
 @end

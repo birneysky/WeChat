@@ -9,7 +9,7 @@
 
 @class NSFetchedResultsController;
 
-@interface CoreDataTableViewController : UITableViewController 
+@interface CoreDataTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic,strong) NSFetchedResultsController* frc;
 
