@@ -72,7 +72,8 @@
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"fromUserID" ascending:YES]];
     NSPredicate* predict = [NSPredicate predicateWithFormat:@"session == %@",self.session];
     [fetchRequest setPredicate:predict];
-    [fetchRequest setFetchBatchSize:50];
+    [fetchRequest setFetchBatchSize:20];
+    //[fetchRequest setFetchLimit:20];
     CoreDataHelper* helper = [CoreDataHelper defaultHelper];
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.defaultContext sectionNameKeyPath:nil cacheName:nil];
     self.frc.delegate = self;
@@ -88,15 +89,17 @@
 
 - (void) performFetch
 {
+    __weak ChatTableViewController* weakSelf = self;
     if (self.frc) {
         [self.frc.managedObjectContext performBlock:^{
             NSError* error = nil;
-            if (![self.frc performFetch:&error]) {
+            if (![weakSelf.frc performFetch:&error]) {
                 DebugLog(@"Failed to perform fetch : %@",error);
             }
-            [self.tableView reloadData];
-            NSUInteger count =  [[self.frc.sections objectAtIndex:0] numberOfObjects];
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+            [weakSelf.tableView reloadData];
+            NSUInteger count =  [[weakSelf.frc.sections objectAtIndex:0] numberOfObjects];
+            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+             NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
         }];
     }
 }

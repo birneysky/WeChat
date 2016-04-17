@@ -110,7 +110,7 @@ static CoreDataHelper* helper;
     if ([context hasChanges]) {
         NSError* error;
         if ([context save:&error]) {
-            TRACE(@"保存改变的数据到持久化存储区");
+           // TRACE(@"保存改变的数据到持久化存储区");
         }
         else{
             DebugLog(@"默认托管上下文保存失败:%@",error);

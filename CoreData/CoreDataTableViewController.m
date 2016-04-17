@@ -52,13 +52,15 @@
 
 - (void) performFetch
 {
+    __weak CoreDataTableViewController* weakSelf = self;
     if (self.frc) {
         [self.frc.managedObjectContext performBlock:^{
             NSError* error = nil;
-            if (![self.frc performFetch:&error]) {
+            if (![weakSelf.frc performFetch:&error]) {
                 DebugLog(@"Failed to perform fetch : %@",error);
             }
-            [self.tableView reloadData];
+            [weakSelf.tableView reloadData];
+            NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
         }];
     }
 }

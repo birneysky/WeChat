@@ -43,7 +43,8 @@
     CoreDataHelper* dataHelper = [CoreDataHelper defaultHelper];
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"MessageSession"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTime" ascending:NO]];
-    [request setFetchBatchSize:50];
+    [request setFetchBatchSize:20];
+    //[request setFetchLimit:20];
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:dataHelper.defaultContext sectionNameKeyPath:nil cacheName:nil];
     self.frc.delegate = self;
 }

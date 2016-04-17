@@ -63,8 +63,11 @@
         }
         
         [helper saveBackgroundContext];
-        [helper.backgroundContext refreshObject:message mergeChanges:NO];
+        
         [helper.backgroundContext refreshObject:session mergeChanges:NO];
+        [helper.backgroundContext refreshObject:message mergeChanges:NO];
+        NSLog(@"backgroundContext managed object count = %lu",[[helper.backgroundContext registeredObjects] count]);
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
         
     }];
@@ -82,10 +85,13 @@
         NSPort* dummyPort = [NSMachPort port];
         [[NSRunLoop currentRunLoop] addPort:dummyPort forMode:NSDefaultRunLoopMode];
         while (weakSelf.runing) {
-            NSInteger index = arc4random() % [usrIDs count];
-            
-            [weakSelf produceMessages:usrIDs[index] index:count++];
-            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+            @autoreleasepool {
+                NSInteger index = arc4random() % [usrIDs count];
+                
+                [weakSelf produceMessages:usrIDs[index] index:count++];
+                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+            }
+
         }
     });
 
