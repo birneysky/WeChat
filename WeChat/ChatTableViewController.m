@@ -26,6 +26,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    //[self.frc.managedObjectContext refreshAllObjects];
+    NSLog(@"ChatTableViewController dealloc");
+    NSLog(@"context managed object count = %lu",[[self.frc.managedObjectContext registeredObjects] count]);
+}
+
 #pragma mark - *** Properties ***
 - (NSMutableArray*)arraySource
 {
@@ -97,9 +104,9 @@
                 DebugLog(@"Failed to perform fetch : %@",error);
             }
             [weakSelf.tableView reloadData];
-            NSUInteger count =  [[weakSelf.frc.sections objectAtIndex:0] numberOfObjects];
-            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-             NSLog(@"context managed object count = %lud",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
+//            NSUInteger count =  [[weakSelf.frc.sections objectAtIndex:0] numberOfObjects];
+//            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+             NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
         }];
     }
 }

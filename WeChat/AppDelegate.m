@@ -36,8 +36,16 @@
 //    message.session = session;
 //    
 //    [helper saveBackgroundContext];
+    
+//    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
+//    //request.sortDescriptors = nil;
+//    request.fetchBatchSize = 30;
+//    NSArray* result = [helper.backgroundContext executeFetchRequest:request error:nil];
+    
     self.factory = [[DataFactory alloc] init];
     [self.factory start];
+    
+    
 
     return YES;
 }

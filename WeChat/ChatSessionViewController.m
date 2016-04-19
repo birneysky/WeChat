@@ -37,6 +37,12 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SomethingChanged" object:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"session view controller context managed object count = %lu",[[self.frc.managedObjectContext registeredObjects] count]);
+}
+
 #pragma mark - *** Configure ***
 - (void)configureFetch
 {

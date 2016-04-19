@@ -43,7 +43,7 @@
 
         Message* message = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:helper.backgroundContext];
         message.fromUserID = userID;
-        message.content = [NSString stringWithFormat:@" %@ ---> self are you ok %lud",userID,index];
+        message.content = [NSString stringWithFormat:@" %@ ---> self are you ok %lu",userID,index];
         message.toUserID = @100;
         MessageSession* session;
         if (result.count  ==  0) {
@@ -89,7 +89,7 @@
                 NSInteger index = arc4random() % [usrIDs count];
                 
                 [weakSelf produceMessages:usrIDs[index] index:count++];
-                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1.0f]];
+                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1f]];
             }
 
         }

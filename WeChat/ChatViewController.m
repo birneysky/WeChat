@@ -32,6 +32,11 @@
 
 @implementation ChatViewController
 
+- (void)dealloc
+{
+    NSLog(@"ChatViewController dealloc");
+}
+
 #pragma mark - *** Properties ***
 - (void)setBottomState:(LCBottomBarState)bottomState
 {

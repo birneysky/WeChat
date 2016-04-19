@@ -60,7 +60,7 @@
                 DebugLog(@"Failed to perform fetch : %@",error);
             }
             [weakSelf.tableView reloadData];
-            NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
+            NSLog(@"context managed object count = %lx",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
         }];
     }
 }
