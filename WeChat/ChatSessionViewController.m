@@ -51,7 +51,7 @@
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTime" ascending:NO]];
     [request setFetchBatchSize:20];
     //[request setFetchLimit:20];
-    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:dataHelper.defaultContext sectionNameKeyPath:nil cacheName:nil];
+    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:dataHelper.defaultContext sectionNameKeyPath:nil cacheName:@"TEChatSession"];
     self.frc.delegate = self;
 }
 
@@ -70,14 +70,20 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",session.sendTime];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"show details" sender:indexPath];
+}
+
 #pragma mark - *** ***
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ChatViewController* chatVC = segue.destinationViewController;
     if ([segue.identifier isEqualToString:@"show details"]) {
-        NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
-        MessageSession* session = [self.frc objectAtIndexPath:indexPath];
+        //NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
+        MessageSession* session = [self.frc objectAtIndexPath:(NSIndexPath*)sender];
         //NSOrderedSet* set = session.messages;
         chatVC.session = session;
     }

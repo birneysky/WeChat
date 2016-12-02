@@ -61,16 +61,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(performFetch)
-                                                 name:@"SomethingChanged"
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(performFetch)
+//                                                 name:@"SomethingChanged"
+//                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SomethingChanged" object:nil];
+    //[[NSNotificationCenter defaultCenter] removeObserver:self name:@"SomethingChanged" object:nil];
 }
 
 - (void)configureFetch
@@ -82,7 +82,7 @@
     [fetchRequest setFetchBatchSize:20];
     //[fetchRequest setFetchLimit:20];
     CoreDataHelper* helper = [CoreDataHelper defaultHelper];
-    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.defaultContext sectionNameKeyPath:nil cacheName:nil];
+    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.backgroundContext sectionNameKeyPath:nil cacheName:nil];
     self.frc.delegate = self;
 }
 
