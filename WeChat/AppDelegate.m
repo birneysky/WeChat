@@ -43,7 +43,7 @@
 //    NSArray* result = [helper.backgroundContext executeFetchRequest:request error:nil];
     
     self.factory = [[DataFactory alloc] init];
-    [self.factory start];
+    //[self.factory start];
     
     
 

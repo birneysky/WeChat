@@ -33,20 +33,20 @@
     return [[self.frc.sections objectAtIndex:section] numberOfObjects];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    return [self.frc sectionForSectionIndexTitle:title atIndex:index];
-}
-
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [[[self.frc sections] objectAtIndex:section] name];
-}
-
-- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return [self.frc sectionIndexTitles];
-}
+//- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+//{
+//    return [self.frc sectionForSectionIndexTitle:title atIndex:index];
+//}
+//
+//- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return [[[self.frc sections] objectAtIndex:section] name];
+//}
+//
+//- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
+//{
+//    return [self.frc sectionIndexTitles];
+//}
 
 #pragma mark - *** Fetching ***
 
@@ -59,8 +59,11 @@
             if (![weakSelf.frc performFetch:&error]) {
                 DebugLog(@"Failed to perform fetch : %@",error);
             }
-            [weakSelf.tableView reloadData];
-            NSLog(@"context managed object count = %lx",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView reloadData];
+                
+            });
+            //NSLog(@"context managed object count = %lx",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
         }];
     }
 }

@@ -30,7 +30,7 @@
 {
     //[self.frc.managedObjectContext refreshAllObjects];
     NSLog(@"ChatTableViewController dealloc");
-    NSLog(@"context managed object count = %lu",[[self.frc.managedObjectContext registeredObjects] count]);
+    //NSLog(@"context managed object count = %lu",[[self.frc.managedObjectContext registeredObjects] count]);
 }
 
 #pragma mark - *** Properties ***
@@ -51,6 +51,10 @@
 }
 
 #pragma mark - *** Init View ***
+- (void)loadViewIfNeeded
+{
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self configureFetch];
@@ -80,7 +84,7 @@
     NSPredicate* predict = [NSPredicate predicateWithFormat:@"session == %@",self.session];
     [fetchRequest setPredicate:predict];
     [fetchRequest setFetchBatchSize:20];
-    //[fetchRequest setFetchLimit:20];
+    [fetchRequest setFetchLimit:20];
     CoreDataHelper* helper = [CoreDataHelper defaultHelper];
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.backgroundContext sectionNameKeyPath:nil cacheName:nil];
     self.frc.delegate = self;
@@ -103,10 +107,14 @@
             if (![weakSelf.frc performFetch:&error]) {
                 DebugLog(@"Failed to perform fetch : %@",error);
             }
-            [weakSelf.tableView reloadData];
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                
+                [weakSelf.tableView reloadData];
+            });
 //            NSUInteger count =  [[weakSelf.frc.sections objectAtIndex:0] numberOfObjects];
 //            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-             NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
+             //NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
         }];
     }
 }
@@ -123,6 +131,9 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row >= self.frc.fetchedObjects.count) {
+        return;
+    }
     Message* message = [self.frc objectAtIndexPath:indexPath];
     cell.textLabel.text = message.content;
 }

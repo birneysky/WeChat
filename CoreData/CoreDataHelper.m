@@ -46,15 +46,21 @@ static CoreDataHelper* helper;
     }
     
     _model = [NSManagedObjectModel mergedModelFromBundles:nil];
-    _defaultContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     _coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
-    [_defaultContext setPersistentStoreCoordinator:_coordinator];
     
+
     _backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [_backgroundContext performBlockAndWait:^{
         [_backgroundContext setPersistentStoreCoordinator:_coordinator];
-        [_backgroundContext setUndoManager:nil];
+        [_backgroundContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+        //[_backgroundContext setUndoManager:nil];
     }];
+
+    //[_defaultContext setPersistentStoreCoordinator:_coordinator];
+    _defaultContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [_defaultContext setParentContext:_backgroundContext];
+    [_defaultContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+    
     
     NSDictionary* options = @{NSSQLitePragmasOption:@{@"journal_mode":@"DELETE"},
                              NSMigratePersistentStoresAutomaticallyOption:@YES,
@@ -127,7 +133,22 @@ static CoreDataHelper* helper;
 }
 
 - (void)saveBackgroundContext{
-    [self saveContext:self.backgroundContext];
+    [self saveDefaultContext];
+    [_backgroundContext performBlock:^{
+        if ([_backgroundContext hasChanges]) {
+            NSError* error;
+            if ([_backgroundContext save:&error]) {
+                // TRACE(@"保存改变的数据到持久化存储区");
+            }
+            else{
+                DebugLog(@"默认托管上下文保存失败:%@",error);
+            }
+        }
+        else{
+            TRACE(@"数据没有变化，不需要保存");
+        }
+    }];
+    //[self saveContext:self.backgroundContext];
 }
 
 @end

@@ -51,8 +51,8 @@
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTime" ascending:NO]];
     [request setFetchBatchSize:20];
     //[request setFetchLimit:20];
-    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:dataHelper.defaultContext sectionNameKeyPath:nil cacheName:@"TEChatSession"];
-    self.frc.delegate = self;
+    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:dataHelper.backgroundContext sectionNameKeyPath:nil cacheName:@"TEChatSession"];
+    //self.frc.delegate = self;
 }
 
 

@@ -64,7 +64,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addChildViewController:self.chatTVC];
+    //[self addChildViewController:self.chatTVC];
+    //[self.chatTVC didMoveToParentViewController:self];
     [self.view addSubview:self.extraPanel];
     [self.view addSubview:self.expressionPanel];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];

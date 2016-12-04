@@ -56,19 +56,20 @@
         else if (result.count == 1){
             session = result.firstObject;
             session.sendTime = [NSDate date];
+            //[session addMessagesObject:message];
             message.session = result.firstObject;
         }
         else{
             assert(0);
         }
         
+        //[helper.backgroundContext refreshObject:message mergeChanges:NO];
+        //[helper.backgroundContext refreshObject:session mergeChanges:NO];
         [helper saveBackgroundContext];
         
-        [helper.backgroundContext refreshObject:session mergeChanges:NO];
-        [helper.backgroundContext refreshObject:message mergeChanges:NO];
-        NSLog(@"backgroundContext managed object count = %lu",[[helper.backgroundContext registeredObjects] count]);
+        //NSLog(@"backgroundContext managed object count = %lu",[[helper.backgroundContext registeredObjects] count]);
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
+        //[[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
         
     }];
 }
@@ -76,7 +77,7 @@
 #pragma mark - *** api ***
 - (void)start
 {
-    NSArray* usrIDs = @[@100001,@100002/*,@100003,@100004,@100005,@100006,@100007,@100008,@100009,@100010,@100011,@100012,@100013,@100014,@100015,@100016,@100017,@100018,@100019,@100020,@100021,@100022,@100023,@100024,@100025,@100026,@100027,@100028*/];
+    NSArray* usrIDs = @[@100001,@100002,@100003,@100004/*,@100005,@100006,@100007,@100008,@100009,@100010,@100011,@100012,@100013,@100014,@100015,@100016,@100017,@100018,@100019,@100020,@100021,@100022,@100023,@100024,@100025,@100026,@100027,@100028*/];
     self.runing = YES;
     
     __weak DataFactory* weakSelf = self;
