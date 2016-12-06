@@ -16,7 +16,7 @@
 @end
 
 @implementation ChatExtraPanel
-
+ 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
