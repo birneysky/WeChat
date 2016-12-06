@@ -12,5 +12,9 @@
 @implementation Message
 
 // Insert code here to add functionality to your managed object subclass
+- (void)dealloc
+{
+    NSLog(@"♻️♻️♻️♻️ Message dealloc");
+}
 
 @end

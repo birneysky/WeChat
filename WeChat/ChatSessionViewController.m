@@ -40,7 +40,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"session view controller context managed object count = %lu",[[self.frc.managedObjectContext registeredObjects] count]);
+//    NSLog(@"session view controller context managed object count = %lu",[[self.frc.managedObjectContext registeredObjects] count]);
 }
 
 #pragma mark - *** Configure ***
@@ -48,7 +48,7 @@
 {
     CoreDataHelper* dataHelper = [CoreDataHelper defaultHelper];
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"MessageSession"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTime" ascending:NO]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTimeForLastMessage" ascending:NO]];
     [request setFetchBatchSize:20];
     //[request setFetchLimit:20];
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:dataHelper.backgroundContext sectionNameKeyPath:nil cacheName:@"TEChatSession"];
@@ -65,9 +65,12 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row > self.frc.fetchedObjects.count) {
+        return;
+    }
     MessageSession* session = [self.frc objectAtIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"%@",session.remoteUserID];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",session.sendTime];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",session.sendTimeForLastMessage];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

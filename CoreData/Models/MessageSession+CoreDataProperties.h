@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSNumber *groupID;
 @property (nullable, nonatomic, retain) NSNumber *remoteUserID;
-@property (nullable, nonatomic, retain) NSDate *sendTime;
+@property (nullable, nonatomic, retain) NSDate *sendTimeForLastMessage;
 @property (nullable, nonatomic, retain) NSNumber *groupType;
 @property (nullable, nonatomic, retain) NSOrderedSet<Message *> *messages;
 

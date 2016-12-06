@@ -17,6 +17,8 @@
 
 @property (nonatomic,assign) BOOL runing;
 
+@property (nonatomic,strong) NSDate* previousDate;
+
 @end
 
 @implementation DataFactory
@@ -45,17 +47,18 @@
         message.fromUserID = userID;
         message.content = [NSString stringWithFormat:@" %@ ---> self are you ok %lu",userID,index];
         message.toUserID = @100;
+        message.sendTime = [NSDate date];
         MessageSession* session;
         if (result.count  ==  0) {
             session = [NSEntityDescription insertNewObjectForEntityForName:@"MessageSession" inManagedObjectContext:helper.backgroundContext];
             session.remoteUserID =userID;
             session.groupID = @0;
             session.groupType = @0;
-            session.sendTime = [NSDate date];
+            session.sendTimeForLastMessage = [NSDate date];
         }
         else if (result.count == 1){
             session = result.firstObject;
-            session.sendTime = [NSDate date];
+            session.sendTimeForLastMessage = [NSDate date];
             //[session addMessagesObject:message];
             message.session = result.firstObject;
         }
@@ -67,9 +70,14 @@
         //[helper.backgroundContext refreshObject:session mergeChanges:NO];
         [helper saveBackgroundContext];
         
+        //[helper.backgroundContext refreshAllObjects];
         //NSLog(@"backgroundContext managed object count = %lu",[[helper.backgroundContext registeredObjects] count]);
         
-        //[[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
+        if ([[NSDate date] timeIntervalSinceDate:self.previousDate] > 3) {
+            //[helper.backgroundContext refreshAllObjects];
+          [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
+        }
+        //
         
     }];
 }
@@ -80,6 +88,7 @@
     NSArray* usrIDs = @[@100001,@100002,@100003,@100004/*,@100005,@100006,@100007,@100008,@100009,@100010,@100011,@100012,@100013,@100014,@100015,@100016,@100017,@100018,@100019,@100020,@100021,@100022,@100023,@100024,@100025,@100026,@100027,@100028*/];
     self.runing = YES;
     
+    self.previousDate = [NSDate date];
     __weak DataFactory* weakSelf = self;
     dispatch_async(self.workQueue, ^{
         NSUInteger count = 0;
@@ -90,7 +99,7 @@
                 NSInteger index = arc4random() % [usrIDs count];
                 
                 [weakSelf produceMessages:usrIDs[index] index:count++];
-                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.05]];
+                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
             }
 
         }

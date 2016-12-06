@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *fromUserID;
 @property (nullable, nonatomic, retain) NSString *content;
 @property (nullable, nonatomic, retain) NSNumber *toUserID;
+@property (nullable, nonatomic, strong) NSDate*   sendTime;
 @property (nullable, nonatomic, retain) MessageSession *session;
 
 @end

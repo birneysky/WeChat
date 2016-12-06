@@ -56,9 +56,9 @@ static CoreDataHelper* helper;
         //[_backgroundContext setUndoManager:nil];
     }];
 
-    //[_defaultContext setPersistentStoreCoordinator:_coordinator];
+    [_defaultContext setPersistentStoreCoordinator:_coordinator];
     _defaultContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_defaultContext setParentContext:_backgroundContext];
+    //[_defaultContext setParentContext:_backgroundContext];
     [_defaultContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
     
     
@@ -133,8 +133,8 @@ static CoreDataHelper* helper;
 }
 
 - (void)saveBackgroundContext{
-    [self saveDefaultContext];
-    [_backgroundContext performBlock:^{
+    //[self saveDefaultContext];
+    //[_backgroundContext performBlock:^{
         if ([_backgroundContext hasChanges]) {
             NSError* error;
             if ([_backgroundContext save:&error]) {
@@ -147,7 +147,7 @@ static CoreDataHelper* helper;
         else{
             TRACE(@"数据没有变化，不需要保存");
         }
-    }];
+    //}];
     //[self saveContext:self.backgroundContext];
 }
 

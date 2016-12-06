@@ -80,7 +80,7 @@
 - (void)configureFetch
 {
     NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"fromUserID" ascending:YES]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTime" ascending:YES]];
     NSPredicate* predict = [NSPredicate predicateWithFormat:@"session == %@",self.session];
     [fetchRequest setPredicate:predict];
     [fetchRequest setFetchBatchSize:20];

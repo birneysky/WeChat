@@ -16,6 +16,7 @@
 @dynamic fromUserID;
 @dynamic content;
 @dynamic toUserID;
+@dynamic sendTime;
 @dynamic session;
 
 @end
