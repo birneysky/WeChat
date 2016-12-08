@@ -28,6 +28,8 @@
 
 - (void)dealloc
 {
+
+    self.frc = nil;
     //[self.frc.managedObjectContext refreshAllObjects];
     NSLog(@"ChatTableViewController dealloc");
     //NSLog(@"context managed object count = %lu",[[self.frc.managedObjectContext registeredObjects] count]);
@@ -65,6 +67,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.frc.delegate = self;
 //    [[NSNotificationCenter defaultCenter] addObserver:self
 //                                             selector:@selector(performFetch)
 //                                                 name:@"SomethingChanged"
@@ -74,6 +77,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+        self.frc.delegate = nil;
     //[[NSNotificationCenter defaultCenter] removeObserver:self name:@"SomethingChanged" object:nil];
 }
 
@@ -86,7 +90,7 @@
     [fetchRequest setFetchBatchSize:20];
     [fetchRequest setFetchLimit:20];
     CoreDataHelper* helper = [CoreDataHelper defaultHelper];
-    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.backgroundContext sectionNameKeyPath:nil cacheName:nil];
+    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.backgroundContext sectionNameKeyPath:nil cacheName:@"ChatMessage"];
     self.frc.delegate = self;
 }
 

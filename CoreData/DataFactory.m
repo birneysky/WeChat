@@ -68,18 +68,23 @@
         
         //[helper.backgroundContext refreshObject:message mergeChanges:NO];
         //[helper.backgroundContext refreshObject:session mergeChanges:NO];
-        [helper saveBackgroundContext];
         
+        [helper saveBackgroundContext];
         //[helper.backgroundContext refreshAllObjects];
         //NSLog(@"backgroundContext managed object count = %lu",[[helper.backgroundContext registeredObjects] count]);
         
         if ([[NSDate date] timeIntervalSinceDate:self.previousDate] > 3) {
-            //[helper.backgroundContext refreshAllObjects];
+            
           [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
+            [helper.backgroundContext refreshAllObjects];
+            self.previousDate = [NSDate date];
+
         }
         //
         
+        
     }];
+    
 }
 
 #pragma mark - *** api ***

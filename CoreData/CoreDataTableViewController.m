@@ -72,14 +72,14 @@
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView beginUpdates];
     });
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView endUpdates];
     });
 }
@@ -92,7 +92,7 @@
     switch (type) {
         case NSFetchedResultsChangeInsert:
         {
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
                               withRowAnimation:UITableViewRowAnimationNone];
                 
@@ -101,7 +101,7 @@
             break;
         case NSFetchedResultsChangeDelete:
         {
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
                               withRowAnimation:UITableViewRowAnimationNone];
@@ -119,10 +119,11 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
+
     switch (type) {
         case NSFetchedResultsChangeInsert:
         {
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
                                       withRowAnimation:UITableViewRowAnimationNone];
                 
@@ -132,7 +133,7 @@
             break;
         case NSFetchedResultsChangeDelete:
         {
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                                       withRowAnimation:UITableViewRowAnimationNone];
                 
@@ -141,7 +142,7 @@
             break;
         case NSFetchedResultsChangeUpdate:
         {
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
                 
                 if (!newIndexPath) {
                     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
@@ -158,7 +159,7 @@
             break;
         case NSFetchedResultsChangeMove:
         {
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                                       withRowAnimation:UITableViewRowAnimationNone];
                 [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]

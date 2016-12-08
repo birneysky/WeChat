@@ -56,10 +56,10 @@ static CoreDataHelper* helper;
         //[_backgroundContext setUndoManager:nil];
     }];
 
-    [_defaultContext setPersistentStoreCoordinator:_coordinator];
-    _defaultContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    //[_defaultContext setParentContext:_backgroundContext];
-    [_defaultContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+//    [_defaultContext setPersistentStoreCoordinator:_coordinator];
+//    _defaultContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+//    //[_defaultContext setParentContext:_backgroundContext];
+//    [_defaultContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
     
     
     NSDictionary* options = @{NSSQLitePragmasOption:@{@"journal_mode":@"DELETE"},
