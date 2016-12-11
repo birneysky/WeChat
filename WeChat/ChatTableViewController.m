@@ -10,10 +10,13 @@
 #import "ChatViewController.h"
 #import "CoreDataHelper.h"
 #import "Message.h"
+#import "MessageSession+CoreDataProperties.h"
 
 @interface ChatTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray* arraySource;
+
+@property (nonatomic,assign) BOOL autoScrollToBottom;
 
 @end
 
@@ -29,6 +32,7 @@
 - (void)dealloc
 {
 
+    [self.tableView removeObserver:self forKeyPath:@"contentSize"];
     self.frc = nil;
     //[self.frc.managedObjectContext refreshAllObjects];
     NSLog(@"ChatTableViewController dealloc");
@@ -85,14 +89,19 @@
 {
     NSFetchRequest* fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Message"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTime" ascending:YES]];
-    NSPredicate* predict = [NSPredicate predicateWithFormat:@"session == %@",self.session];
+    NSPredicate* predict = [NSPredicate predicateWithFormat:@"sessionID = %lld",self.session.sID];
     [fetchRequest setPredicate:predict];
-    [fetchRequest setFetchBatchSize:20];
+    //[fetchRequest setFetchBatchSize:100];
+    [fetchRequest setFetchOffset:self.session.totalNumOfMessage - 20];
     [fetchRequest setFetchLimit:20];
     CoreDataHelper* helper = [CoreDataHelper defaultHelper];
-    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.backgroundContext sectionNameKeyPath:nil cacheName:@"ChatMessage"];
+    self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:helper.backgroundContext sectionNameKeyPath:nil cacheName:nil];
     self.frc.delegate = self;
+    
+    [self.tableView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+    self.autoScrollToBottom = YES;
 }
+
 
 #pragma makr - *** Helper ***
 - (void)setSession:(MessageSession *)session
@@ -102,24 +111,33 @@
     [self performFetch];
 }
 
-- (void) performFetch
+//- (void) performFetch
+//{
+//    __weak ChatTableViewController* weakSelf = self;
+//    if (self.frc) {
+//        [self.frc.managedObjectContext performBlock:^{
+//            NSError* error = nil;
+//            if (![weakSelf.frc performFetch:&error]) {
+//                DebugLog(@"Failed to perform fetch : %@",error);
+//            }
+//            
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                
+//                [weakSelf.tableView reloadData];
+//            });
+////            NSUInteger count =  [[weakSelf.frc.sections objectAtIndex:0] numberOfObjects];
+////            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//             //NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
+//        }];
+//    }
+//}
+#pragma mark - *** KVO ***
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    __weak ChatTableViewController* weakSelf = self;
-    if (self.frc) {
-        [self.frc.managedObjectContext performBlock:^{
-            NSError* error = nil;
-            if (![weakSelf.frc performFetch:&error]) {
-                DebugLog(@"Failed to perform fetch : %@",error);
-            }
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                
-                [weakSelf.tableView reloadData];
-            });
-//            NSUInteger count =  [[weakSelf.frc.sections objectAtIndex:0] numberOfObjects];
-//            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-             //NSLog(@"context managed object count = %lu",[[weakSelf.frc.managedObjectContext registeredObjects] count]);
-        }];
+    if ([keyPath isEqualToString:@"contentSize"]&&self.autoScrollToBottom) {
+        //NSLog(@"change %@",change);
+        //NSLog(@"contentSize %@, contentinset %@,",NSStringFromCGSize(self.tableView.contentSize) ,NSStringFromUIEdgeInsets(self.tableView.contentInset));
+        [self.tableView scrollRectToVisible:CGRectMake(0, self.tableView.contentSize.height - 44, self.tableView.contentSize.width, 44) animated:NO];
     }
 }
 
@@ -130,6 +148,7 @@
     if (!cell) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
     }
+    //cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 
@@ -140,6 +159,10 @@
     }
     Message* message = [self.frc objectAtIndexPath:indexPath];
     cell.textLabel.text = message.content;
+    NSDateFormatter*  dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSString* dateString = [dateFormatter stringFromDate:message.sendTime];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",dateString];
 }
 
 
@@ -191,8 +214,31 @@
 #pragma mark - *** UIScrollViewDelegate ***
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    [[self chatVC] setBottomState:LCBottomBarStateNormal];
-    [[self chatVC].textView resignFirstResponder];
+    self.autoScrollToBottom = NO;
+//    [[self chatVC] setBottomState:LCBottomBarStateNormal];
+//    [[self chatVC].textView resignFirstResponder];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSLog(@"scrollViewDidEndDecelerating");
+    NSArray<NSIndexPath *> * cellArray = [self.tableView indexPathsForVisibleRows];
+    NSIndexPath* lastIndexPath =  cellArray.lastObject;
+    NSIndexPath* firstIndexPath = cellArray.firstObject;
+    
+    NSLog(@"firstPath row:%ld,lastPath row:%ld",firstIndexPath.row,lastIndexPath.row);
+    NSInteger rowCount = [self.tableView  numberOfRowsInSection:0];
+    if ( rowCount - lastIndexPath.row < 5) {
+        self.autoScrollToBottom = YES;
+    }
+    else{
+        self.autoScrollToBottom = NO;
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    NSLog(@"scrollViewDidEndScrollingAnimation");
 }
 
 @end

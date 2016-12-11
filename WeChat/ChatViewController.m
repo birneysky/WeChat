@@ -10,7 +10,7 @@
 #import "ChatTableViewController.h"
 #import "ChatExtraPanel.h"
 #import "ChatExpressionPanel.h"
-#import "MessageSession.h"
+
 
 @interface ChatViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

@@ -84,7 +84,7 @@ static CoreDataHelper* helper;
 - (NSURL*)appStorePath
 {
     NSURL* storeURL = [[NSURL fileURLWithPath:[self appDocumentPath]] URLByAppendingPathComponent:@"Stores"];
-    
+    NSLog(@"storeURL %@",storeURL);
     //如果没有该目录，创建该目录
     NSFileManager* fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:storeURL.path ]) {

@@ -19,7 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *remoteUserID;
 @property (nullable, nonatomic, retain) NSDate *sendTimeForLastMessage;
 @property (nullable, nonatomic, retain) NSNumber *groupType;
-@property (nullable, nonatomic, retain) NSOrderedSet<Message *> *messages;
+@property (nonatomic,assign) int64_t sID;
+@property (nonatomic,assign) int32_t totalNumOfMessage;
+@property (nonatomic,assign) int32_t totalNumOfUnreadMessage;
 
 @end
 

@@ -17,6 +17,8 @@
 @dynamic remoteUserID;
 @dynamic sendTimeForLastMessage;
 @dynamic groupType;
-@dynamic messages;
+@dynamic sID;
+@dynamic totalNumOfMessage;
+@dynamic totalNumOfUnreadMessage;
 
 @end

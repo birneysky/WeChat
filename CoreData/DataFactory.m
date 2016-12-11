@@ -45,43 +45,45 @@
 
         Message* message = [NSEntityDescription insertNewObjectForEntityForName:@"Message" inManagedObjectContext:helper.backgroundContext];
         message.fromUserID = userID;
-        message.content = [NSString stringWithFormat:@" %@ ---> self are you ok %lu",userID,index];
+        message.content = [NSString stringWithFormat:@" %@ ---> 💋💋💋 self are you ok  💋💋💋  %lu",userID,index];
         message.toUserID = @100;
         message.sendTime = [NSDate date];
         MessageSession* session;
         if (result.count  ==  0) {
+            NSInteger sessionCount = [helper.backgroundContext countForFetchRequest:[NSFetchRequest fetchRequestWithEntityName:@"MessageSession"] error:nil];
             session = [NSEntityDescription insertNewObjectForEntityForName:@"MessageSession" inManagedObjectContext:helper.backgroundContext];
             session.remoteUserID =userID;
             session.groupID = @0;
             session.groupType = @0;
             session.sendTimeForLastMessage = [NSDate date];
+            session.sID = sessionCount + 1;
         }
         else if (result.count == 1){
             session = result.firstObject;
             session.sendTimeForLastMessage = [NSDate date];
             //[session addMessagesObject:message];
-            message.session = result.firstObject;
+           
         }
         else{
             assert(0);
         }
         
-        //[helper.backgroundContext refreshObject:message mergeChanges:NO];
-        //[helper.backgroundContext refreshObject:session mergeChanges:NO];
+         message.sessionID = session.sID;
+        session.totalNumOfMessage += 1;
         
         [helper saveBackgroundContext];
+        //[helper.backgroundContext refreshObject:message mergeChanges:NO];
+        //[helper.backgroundContext refreshObject:session mergeChanges:NO];
         //[helper.backgroundContext refreshAllObjects];
-        //NSLog(@"backgroundContext managed object count = %lu",[[helper.backgroundContext registeredObjects] count]);
+        NSLog(@"backgroundContext managed object count = %lu",[[helper.backgroundContext registeredObjects] count]);
         
         if ([[NSDate date] timeIntervalSinceDate:self.previousDate] > 3) {
             
           [[NSNotificationCenter defaultCenter] postNotificationName:@"SomethingChanged" object:nil];
-            [helper.backgroundContext refreshAllObjects];
+            //[helper.backgroundContext refreshAllObjects];
             self.previousDate = [NSDate date];
 
         }
-        //
-        
         
     }];
     
@@ -90,7 +92,8 @@
 #pragma mark - *** api ***
 - (void)start
 {
-    NSArray* usrIDs = @[@100001,@100002,@100003,@100004/*,@100005,@100006,@100007,@100008,@100009,@100010,@100011,@100012,@100013,@100014,@100015,@100016,@100017,@100018,@100019,@100020,@100021,@100022,@100023,@100024,@100025,@100026,@100027,@100028*/];
+    //sleep(20);
+    NSArray* usrIDs = @[@100001,@100002,@100003,@100004,@100005/*,@100006,@100007,@100008,@100009,@100010,@100011,@100012,@100013,@100014,@100015,@100016,@100017,@100018,@100019,@100020,@100021,@100022,@100023,@100024,@100025,@100026,@100027,@100028*/];
     self.runing = YES;
     
     self.previousDate = [NSDate date];
@@ -104,7 +107,7 @@
                 NSInteger index = arc4random() % [usrIDs count];
                 
                 [weakSelf produceMessages:usrIDs[index] index:count++];
-                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.05]];
             }
 
         }
