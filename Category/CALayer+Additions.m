@@ -15,4 +15,9 @@
     self.borderColor = color.CGColor;
 }
 
+- (void)setShadowColorFromUIColor:(UIColor*)color
+{
+    self.shadowColor = color.CGColor;
+}
+
 @end

@@ -13,10 +13,14 @@
 
 @implementation Message (CoreDataProperties)
 
-@dynamic fromUserID;
+@dynamic mID;
+@dynamic senderID;
+@dynamic receiverID;
 @dynamic content;
-@dynamic toUserID;
 @dynamic sendTime;
+@dynamic type;
+@dynamic recvTime;
 @dynamic sessionID;
+@dynamic senderIsMe;
 
 @end

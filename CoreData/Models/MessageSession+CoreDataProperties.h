@@ -15,13 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MessageSession (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *groupID;
-@property (nullable, nonatomic, retain) NSNumber *remoteUserID;
-@property (nullable, nonatomic, retain) NSDate *sendTimeForLastMessage;
-@property (nullable, nonatomic, retain) NSNumber *groupType;
-@property (nonatomic,assign) int64_t sID;
-@property (nonatomic,assign) int32_t totalNumOfMessage;
-@property (nonatomic,assign) int32_t totalNumOfUnreadMessage;
+@property (nonatomic) int64_t groupID;
+@property (nonatomic) int16_t groupType;
+@property (nonatomic) int64_t senderID;
+@property (nullable, nonatomic, copy) NSDate *timeToRecvLastMessage;
+@property (nullable, nonatomic, copy) NSString *overviewOfLastMessage;
+@property (nonatomic) int16_t lastMessageType;
+@property (nonatomic, assign) int32_t sID;
+@property (nonatomic, assign) int32_t totalNumOfMessage;
 
 @end
 

@@ -13,4 +13,6 @@
 
 -(void)setBorderColorFromUIColor:(UIColor*)color;
 
+- (void)setShadowColorFromUIColor:(UIColor*)color;
+
 @end

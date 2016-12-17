@@ -48,7 +48,7 @@
 {
     CoreDataHelper* dataHelper = [CoreDataHelper defaultHelper];
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"MessageSession"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"sendTimeForLastMessage" ascending:NO]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"timeToRecvLastMessage" ascending:NO]];
     [request setFetchBatchSize:20];
     //[request setFetchLimit:20];
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:dataHelper.backgroundContext sectionNameKeyPath:nil cacheName:@"TEChatSession"];
@@ -69,8 +69,9 @@
         return;
     }
     MessageSession* session = [self.frc objectAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",session.remoteUserID];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",session.sendTimeForLastMessage];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%lld",session.senderID];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",session.overviewOfLastMessage];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
