@@ -52,7 +52,7 @@
         
         CGFloat contextX = 0;
         if (message.senderIsMe) {
-            contextX = screenW - _layoutModel.width - Spacing;
+            contextX = screenW - _layoutModel.width - Spacing - 11;
             _contentInset = UIEdgeInsetsMake(4, 5, 12, 11);
         }
         else{

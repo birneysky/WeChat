@@ -42,10 +42,12 @@
 		74CB65901CC21F5C0071E1A3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB658F1CC21F5C0071E1A3 /* CoreDataHelper.m */; };
 		74CB65AF1CC242C10071E1A3 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */; };
 		74CB65B21CC244210071E1A3 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65B11CC244210071E1A3 /* ChatSessionViewController.m */; };
+		74F68FED1E0624C30021F303 /* TEExpressionNamesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F68FEC1E0624C30021F303 /* TEExpressionNamesManager.m */; };
+		74F68FEF1E06254E0021F303 /* TEExpression.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 74F68FEE1E06254E0021F303 /* TEExpression.bundle */; };
 		DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */; };
 		DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */; };
 		DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */; };
-		DBAE8A131C9FEA450030BF18 /* Expression_String.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBAE8A121C9FEA450030BF18 /* Expression_String.plist */; };
+		DBAE8A131C9FEA450030BF18 /* TEExpressionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBAE8A121C9FEA450030BF18 /* TEExpressionNames.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,9 @@
 		74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		74CB65B01CC244210071E1A3 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
 		74CB65B11CC244210071E1A3 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
+		74F68FEB1E0624C30021F303 /* TEExpressionNamesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEExpressionNamesManager.h; sourceTree = "<group>"; };
+		74F68FEC1E0624C30021F303 /* TEExpressionNamesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEExpressionNamesManager.m; sourceTree = "<group>"; };
+		74F68FEE1E06254E0021F303 /* TEExpression.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TEExpression.bundle; sourceTree = "<group>"; };
 		DBAE8A081C9F94550030BF18 /* ChatExtraPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExtraPanel.h; sourceTree = "<group>"; };
 		DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatExtraPanel.m; sourceTree = "<group>"; };
 		DBAE8A0B1C9F94790030BF18 /* ChatExpressionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExpressionPanel.h; sourceTree = "<group>"; };
@@ -143,7 +148,7 @@
 		DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChat.pch; sourceTree = "<group>"; };
 		DBAE8A0F1C9FD0D20030BF18 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		DBAE8A121C9FEA450030BF18 /* Expression_String.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expression_String.plist; sourceTree = "<group>"; };
+		DBAE8A121C9FEA450030BF18 /* TEExpressionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TEExpressionNames.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +218,8 @@
 				74372DC41C9EB14000A27DAD /* Info.plist */,
 				74372DB31C9EB14000A27DAD /* Supporting Files */,
 				DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */,
-				DBAE8A121C9FEA450030BF18 /* Expression_String.plist */,
+				DBAE8A121C9FEA450030BF18 /* TEExpressionNames.plist */,
+				74F68FEE1E06254E0021F303 /* TEExpression.bundle */,
 			);
 			path = WeChat;
 			sourceTree = "<group>";
@@ -279,6 +285,8 @@
 		74AEE8031E052A2800919508 /* TextLayout */ = {
 			isa = PBXGroup;
 			children = (
+				74F68FEB1E0624C30021F303 /* TEExpressionNamesManager.h */,
+				74F68FEC1E0624C30021F303 /* TEExpressionNamesManager.m */,
 				74AEE8171E052B4400919508 /* TEChatMessage.h */,
 				74AEE8181E052B4400919508 /* TEChatMessage.m */,
 				74AEE8191E052B4400919508 /* TEChatXMLReader.h */,
@@ -455,10 +463,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F68FEF1E06254E0021F303 /* TEExpression.bundle in Resources */,
 				74372DC31C9EB14000A27DAD /* LaunchScreen.storyboard in Resources */,
 				74372DC01C9EB14000A27DAD /* Assets.xcassets in Resources */,
 				74372DBE1C9EB14000A27DAD /* Main.storyboard in Resources */,
-				DBAE8A131C9FEA450030BF18 /* Expression_String.plist in Resources */,
+				DBAE8A131C9FEA450030BF18 /* TEExpressionNames.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +525,7 @@
 				74AEE8361E0530C800919508 /* TEBubbleCellInnerLayout.m in Sources */,
 				74AEE8121E052A2800919508 /* TETextAttibuteConfig.m in Sources */,
 				7420A45F1CC369D8003033AC /* DataFactory.m in Sources */,
+				74F68FED1E0624C30021F303 /* TEExpressionNamesManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

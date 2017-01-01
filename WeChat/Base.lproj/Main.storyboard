@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hWI-M1-RK2">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hWI-M1-RK2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ml3-T3-VBY" id="eDs-b0-EHp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -120,6 +120,9 @@
                                                     <integer key="value" value="5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="79R-2O-Lv5"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <constraints>
@@ -163,7 +166,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pMx-XL-Uvv" secondAttribute="bottom" id="yNS-MT-OHH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eMd-Nc-eJy"/>
+                    <navigationItem key="navigationItem" id="eMd-Nc-eJy">
+                        <barButtonItem key="rightBarButtonItem" title="show" id="x1d-6D-YgD">
+                            <connections>
+                                <action selector="showBtnClicked:" destination="BYZ-38-t0r" id="hvL-5V-TGL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="pMx-XL-Uvv" id="cio-uX-b06"/>
                         <outlet property="bottomViewBottomConstraint" destination="yNS-MT-OHH" id="zPP-TA-f06"/>

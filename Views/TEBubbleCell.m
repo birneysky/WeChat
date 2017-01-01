@@ -72,8 +72,8 @@
     self.timeLabel.text = message.timeLabelString;
     
     if (message.senderIsMe) {
-        UIImage* image = [UIImage imageNamed:@"sendto_bubble_bg"];
-        self.messageView.image =  [image resizableImageWithCapInsets:UIEdgeInsetsMake(35, 22, 10, 10) resizingMode:UIImageResizingModeStretch];
+        UIImage* image = [UIImage imageNamed:@"bubble_right"];
+        self.messageView.image =  [image resizableImageWithCapInsets:UIEdgeInsetsMake(10, 20, 10, 20) resizingMode:UIImageResizingModeStretch];
     }
     else{
         UIImage* image = [UIImage imageNamed:@"bubble_left"];

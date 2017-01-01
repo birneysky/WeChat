@@ -122,9 +122,9 @@ NSString *const kXMLReaderTextNodeKey = @"text";
         TEExpresssionSubItem* faceItem = [[TEExpresssionSubItem alloc] initWithType:Face];
         NSString* path = [[NSBundle mainBundle] pathForResource:@"TEExpression" ofType:@"bundle"];
         NSString* itemName = [NSString stringWithFormat:@"Expression_%@",attributeDict[TEFileNameAttribute]];
-        //NSString* imageName = [path stringByAppendingPathComponent:itemName];
+        NSString* imageName = [path stringByAppendingPathComponent:itemName];
         //NSString* imagePath = [[NSBundle mainBundle] pathForResource:itemName ofType:@".png"];
-        faceItem.fileName = itemName;
+        faceItem.fileName = imageName;
         faceItem.imagePosition = CGRectMake(0, 0, 20, 20);
         [_chatMessage addItem:faceItem];
     }

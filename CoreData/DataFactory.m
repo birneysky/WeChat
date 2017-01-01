@@ -219,7 +219,7 @@
                 NSInteger index = arc4random() % [usrIDs count];
                 
                 [weakSelf produceMessages:usrIDs[index] index:count++];
-                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.05]];
+                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:3]];
             }
 
         }
