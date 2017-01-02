@@ -55,7 +55,7 @@ static CGFloat ascentCallback(void *ref){
 }
 
 static CGFloat descentCallback(void *ref){
-    return 4;
+    return 0.15625 * 17 + 3.75;
 }
 
 static CGFloat widthCallback(void* ref){
