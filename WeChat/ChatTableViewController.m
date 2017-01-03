@@ -134,7 +134,7 @@
 #pragma mark - *** KVO ***
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"contentSize"]&&self.autoScrollToBottom) {
+    if ([keyPath isEqualToString:@"contentSize"] && self.autoScrollToBottom) {
         //NSLog(@"change %@",change);
         //NSLog(@"contentSize %@, contentinset %@,",NSStringFromCGSize(self.tableView.contentSize) ,NSStringFromUIEdgeInsets(self.tableView.contentInset));
         [self.tableView scrollRectToVisible:CGRectMake(0, self.tableView.contentSize.height - 44, self.tableView.contentSize.width, 44) animated:NO];
