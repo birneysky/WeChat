@@ -11,6 +11,8 @@
 #import "CoreDataHelper.h"
 #import "Message.h"
 #import "MessageSession+CoreDataProperties.h"
+#import "TEBubbleCell.h"
+#import "TEBubbleCellInnerLayout.h"
 
 @interface ChatTableViewController ()
 
@@ -144,10 +146,10 @@
 #pragma mark - Table view data source
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
-    if (!cell) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
-    }
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];//[self.tableView dequeueReusableCellWithIdentifier:@"MessageCell"];
+//    if (!cell) {
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
+//    }
     //cell.backgroundColor = [UIColor redColor];
     return cell;
 }
@@ -157,14 +159,40 @@
     if (indexPath.row >= self.frc.fetchedObjects.count) {
         return;
     }
+    
+    
+    if (indexPath.row >= [self.frc.sections.lastObject numberOfObjects]) {
+        return;
+    }
+    
+    TEBubbleCell *bulleCell = (TEBubbleCell*)cell;
     Message* message = [self.frc objectAtIndexPath:indexPath];
-    cell.textLabel.text = message.content;
-    NSDateFormatter*  dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    NSString* dateString = [dateFormatter stringFromDate:message.sendTime];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",dateString];
+    //[message layoutModel];
+    //cell.textLabel.text  = message.content;
+    //[bulleCell setLayoutModel:message.layoutModel];
+    [bulleCell setMessage:message];
+    
+//    Message* message = [self.frc objectAtIndexPath:indexPath];
+//    cell.textLabel.text = message.content;
+//    NSDateFormatter*  dateFormatter = [[NSDateFormatter alloc] init];
+//    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+//    NSString* dateString = [dateFormatter stringFromDate:message.sendTime];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",dateString];
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row >= [self.frc.sections.lastObject numberOfObjects]) {
+        return 0;
+    }
+    Message* message = [self.frc objectAtIndexPath:indexPath];
+    CGFloat height  = message.layout.cellHeight;
+    if(height < 44){
+        return 44 + 16;
+    }
+    return height;
+}
 
 /*
 // Override to support conditional editing of the table view.

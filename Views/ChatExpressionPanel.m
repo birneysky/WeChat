@@ -58,7 +58,7 @@
     [self addSubview:self.scrollView];
     [self addSubview:self.pageControl];
     
-    NSString * filePath = [[NSBundle mainBundle] pathForResource:@"Expression_String" ofType:@"plist"];
+    NSString * filePath = [[NSBundle mainBundle] pathForResource:@"TEExpressionNames" ofType:@"plist"];
     NSArray*  expressionStringArray = [NSArray arrayWithContentsOfFile:filePath];
     
     CGFloat panelWith = self.width;
@@ -80,6 +80,7 @@
     self.pageControl.numberOfPages = pageCount;
     self.pageControl.currentPage = 0;
     
+     NSString* expressionBundlePath = [[NSBundle mainBundle] pathForResource:@"TEExpression" ofType:@"bundle"];
     for (NSUInteger i = 0; i < expressionStringArray.count; i++) {
         NSUInteger pageIndex = i / numberPerPage;
         NSUInteger rowIndex = (i%numberPerPage) / columnCount;
@@ -88,9 +89,22 @@
         CGRect frame = CGRectMake(pageIndex * panelWith + columnIndex * expressionWidth, rowIndex * expressionHeight, expressionWidth, expressionHeight);
         UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = frame;
-        [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Expression_%lu",i+1]] forState:UIControlStateNormal];
+        
+        NSString* imageName = [NSString stringWithFormat:@"Expression_%lu",i];
+        NSString* imagePathName = [expressionBundlePath stringByAppendingPathComponent:imageName];
+        button.tag = i;
+         [button addTarget:self action:@selector(faceClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:imagePathName] forState:UIControlStateNormal];
         [self.scrollView addSubview:button];
     }
+    
+    UIButton* sendButton = [[UIButton alloc] initWithFrame:CGRectMake(self.width - 50, self.height - 30, 50, 30)];
+    sendButton.backgroundColor = RGB(23, 126, 253);
+    [sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [sendButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [sendButton setTitle:@"发送" forState:UIControlStateNormal];
+    [sendButton addTarget:self action:@selector(sendBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:sendButton];
 
 }
 
@@ -101,6 +115,21 @@
 {
     NSUInteger pageIndex = scrollView.contentOffset.x / self.width;
     self.pageControl.currentPage = pageIndex;
+}
+
+
+#pragma mark - *** Target Action ***
+
+- (void)faceClicked:(UIButton*)sender{
+    if ([self.delegate respondsToSelector:@selector(factButtonClickedAtIndex:)]) {
+        [self.delegate factButtonClickedAtIndex:sender.tag];
+    }
+}
+
+- (void)sendBtnClicked:(UIButton*)sender{
+    if ([self.delegate respondsToSelector:@selector(sendButtonClickedInPannnel)]) {
+        [self.delegate sendButtonClickedInPannnel];
+    }
 }
 
 @end

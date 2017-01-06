@@ -15,11 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Message (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *fromUserID;
-@property (nullable, nonatomic, retain) NSString *content;
-@property (nullable, nonatomic, retain) NSNumber *toUserID;
-@property (nullable, nonatomic, strong) NSDate*   sendTime;
-@property (nonatomic, assign) int64_t   sessionID;
+@property (nullable, nonatomic, copy) NSString* mID;
+@property (nonatomic) int64_t senderID;
+@property (nonatomic) int64_t receiverID;
+@property (nullable, nonatomic, copy) NSString *content;
+@property (nullable, nonatomic, copy) NSDate *sendTime;
+@property (nonatomic, assign) int16_t type;
+@property (nullable, nonatomic, copy) NSDate *recvTime;
+@property (nonatomic, assign) int32_t sessionID;
+@property (nonatomic,assign) BOOL senderIsMe;
 
 @end
 

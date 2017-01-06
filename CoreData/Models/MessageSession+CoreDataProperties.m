@@ -14,11 +14,13 @@
 @implementation MessageSession (CoreDataProperties)
 
 @dynamic groupID;
-@dynamic remoteUserID;
-@dynamic sendTimeForLastMessage;
 @dynamic groupType;
+@dynamic senderID;
+@dynamic timeToRecvLastMessage;
+@dynamic overviewOfLastMessage;
+@dynamic lastMessageType;
 @dynamic sID;
 @dynamic totalNumOfMessage;
-@dynamic totalNumOfUnreadMessage;
+
 
 @end

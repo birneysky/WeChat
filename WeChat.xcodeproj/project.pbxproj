@@ -18,18 +18,38 @@
 		74372DD91C9EB14000A27DAD /* WeChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DD81C9EB14000A27DAD /* WeChatUITests.m */; };
 		74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */; };
 		74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */; };
+		74AEE8111E052A2800919508 /* TEMagnifiterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8051E052A2800919508 /* TEMagnifiterView.m */; };
+		74AEE8121E052A2800919508 /* TETextAttibuteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8071E052A2800919508 /* TETextAttibuteConfig.m */; };
+		74AEE8131E052A2800919508 /* TETextFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8091E052A2800919508 /* TETextFrameParser.m */; };
+		74AEE8141E052A2800919508 /* TETextLayoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE80B1E052A2800919508 /* TETextLayoutModel.m */; };
+		74AEE8151E052A2800919508 /* TETextLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE80E1E052A2800919508 /* TETextLayoutView.m */; };
+		74AEE8161E052A2800919508 /* TETextTouchUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8101E052A2800919508 /* TETextTouchUtils.m */; };
+		74AEE81D1E052B4400919508 /* TEChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8181E052B4400919508 /* TEChatMessage.m */; };
+		74AEE81E1E052B4400919508 /* TEChatXMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE81A1E052B4400919508 /* TEChatXMLReader.m */; };
+		74AEE81F1E052B4400919508 /* TEMsgSubItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE81C1E052B4400919508 /* TEMsgSubItem.m */; };
+		74AEE8241E052BBF00919508 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8231E052BBF00919508 /* XMLDictionary.m */; };
+		74AEE8271E052CE500919508 /* TESizeAspect.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8261E052CE500919508 /* TESizeAspect.m */; };
+		74AEE82C1E052F4500919508 /* NSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8291E052F4500919508 /* NSDate+Utils.m */; };
+		74AEE82D1E052F4500919508 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE82B1E052F4500919508 /* NSString+UUID.m */; };
+		74AEE8301E052FD500919508 /* TEBubbleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE82F1E052FD500919508 /* TEBubbleCell.m */; };
+		74AEE8331E05302400919508 /* TEMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8321E05302400919508 /* TEMessageView.m */; };
+		74AEE8361E0530C800919508 /* TEBubbleCellInnerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 74AEE8351E0530C800919508 /* TEBubbleCellInnerLayout.m */; };
 		74B90DC91CC32153004C4CA6 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B90DC21CC32153004C4CA6 /* Message.m */; };
 		74B90DCA1CC32153004C4CA6 /* Message+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B90DC41CC32153004C4CA6 /* Message+CoreDataProperties.m */; };
 		74B90DCB1CC32153004C4CA6 /* MessageSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B90DC61CC32153004C4CA6 /* MessageSession.m */; };
 		74B90DCC1CC32153004C4CA6 /* MessageSession+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B90DC81CC32153004C4CA6 /* MessageSession+CoreDataProperties.m */; };
+		74C6B1C91E190F80006E5821 /* YYTextAsyncLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B1C81E190F80006E5821 /* YYTextAsyncLayer.m */; };
+		74C6B1CE1E19102A006E5821 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B1CD1E19102A006E5821 /* AsyncImageView.m */; };
 		74CB658D1CC20D680071E1A3 /* WeChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74CB658B1CC20D680071E1A3 /* WeChat.xcdatamodeld */; };
 		74CB65901CC21F5C0071E1A3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB658F1CC21F5C0071E1A3 /* CoreDataHelper.m */; };
 		74CB65AF1CC242C10071E1A3 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */; };
 		74CB65B21CC244210071E1A3 /* ChatSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CB65B11CC244210071E1A3 /* ChatSessionViewController.m */; };
+		74F68FED1E0624C30021F303 /* TEExpressionNamesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F68FEC1E0624C30021F303 /* TEExpressionNamesManager.m */; };
+		74F68FEF1E06254E0021F303 /* TEExpression.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 74F68FEE1E06254E0021F303 /* TEExpression.bundle */; };
 		DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */; };
 		DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */; };
 		DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */; };
-		DBAE8A131C9FEA450030BF18 /* Expression_String.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBAE8A121C9FEA450030BF18 /* Expression_String.plist */; };
+		DBAE8A131C9FEA450030BF18 /* TEExpressionNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBAE8A121C9FEA450030BF18 /* TEExpressionNames.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +92,39 @@
 		74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
 		74372DEA1C9ED9B800A27DAD /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
 		74372DEB1C9ED9B800A27DAD /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
+		74AEE8041E052A2800919508 /* TEMagnifiterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMagnifiterView.h; sourceTree = "<group>"; };
+		74AEE8051E052A2800919508 /* TEMagnifiterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMagnifiterView.m; sourceTree = "<group>"; };
+		74AEE8061E052A2800919508 /* TETextAttibuteConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETextAttibuteConfig.h; sourceTree = "<group>"; };
+		74AEE8071E052A2800919508 /* TETextAttibuteConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETextAttibuteConfig.m; sourceTree = "<group>"; };
+		74AEE8081E052A2800919508 /* TETextFrameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETextFrameParser.h; sourceTree = "<group>"; };
+		74AEE8091E052A2800919508 /* TETextFrameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETextFrameParser.m; sourceTree = "<group>"; };
+		74AEE80A1E052A2800919508 /* TETextLayoutModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETextLayoutModel.h; sourceTree = "<group>"; };
+		74AEE80B1E052A2800919508 /* TETextLayoutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETextLayoutModel.m; sourceTree = "<group>"; };
+		74AEE80C1E052A2800919508 /* TETextLayoutModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETextLayoutModelProtocol.h; sourceTree = "<group>"; };
+		74AEE80D1E052A2800919508 /* TETextLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETextLayoutView.h; sourceTree = "<group>"; };
+		74AEE80E1E052A2800919508 /* TETextLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETextLayoutView.m; sourceTree = "<group>"; };
+		74AEE80F1E052A2800919508 /* TETextTouchUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TETextTouchUtils.h; sourceTree = "<group>"; };
+		74AEE8101E052A2800919508 /* TETextTouchUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TETextTouchUtils.m; sourceTree = "<group>"; };
+		74AEE8171E052B4400919508 /* TEChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEChatMessage.h; sourceTree = "<group>"; };
+		74AEE8181E052B4400919508 /* TEChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEChatMessage.m; sourceTree = "<group>"; };
+		74AEE8191E052B4400919508 /* TEChatXMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEChatXMLReader.h; sourceTree = "<group>"; };
+		74AEE81A1E052B4400919508 /* TEChatXMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEChatXMLReader.m; sourceTree = "<group>"; };
+		74AEE81B1E052B4400919508 /* TEMsgSubItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMsgSubItem.h; sourceTree = "<group>"; };
+		74AEE81C1E052B4400919508 /* TEMsgSubItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMsgSubItem.m; sourceTree = "<group>"; };
+		74AEE8221E052BBF00919508 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		74AEE8231E052BBF00919508 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
+		74AEE8251E052CE500919508 /* TESizeAspect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESizeAspect.h; sourceTree = "<group>"; };
+		74AEE8261E052CE500919508 /* TESizeAspect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESizeAspect.m; sourceTree = "<group>"; };
+		74AEE8281E052F4500919508 /* NSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utils.h"; sourceTree = "<group>"; };
+		74AEE8291E052F4500919508 /* NSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utils.m"; sourceTree = "<group>"; };
+		74AEE82A1E052F4500919508 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
+		74AEE82B1E052F4500919508 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
+		74AEE82E1E052FD500919508 /* TEBubbleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEBubbleCell.h; sourceTree = "<group>"; };
+		74AEE82F1E052FD500919508 /* TEBubbleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEBubbleCell.m; sourceTree = "<group>"; };
+		74AEE8311E05302400919508 /* TEMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMessageView.h; sourceTree = "<group>"; };
+		74AEE8321E05302400919508 /* TEMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMessageView.m; sourceTree = "<group>"; };
+		74AEE8341E0530C800919508 /* TEBubbleCellInnerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEBubbleCellInnerLayout.h; sourceTree = "<group>"; };
+		74AEE8351E0530C800919508 /* TEBubbleCellInnerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEBubbleCellInnerLayout.m; sourceTree = "<group>"; };
 		74B90DC11CC32153004C4CA6 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		74B90DC21CC32153004C4CA6 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		74B90DC31CC32153004C4CA6 /* Message+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Message+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -80,6 +133,10 @@
 		74B90DC61CC32153004C4CA6 /* MessageSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSession.m; sourceTree = "<group>"; };
 		74B90DC71CC32153004C4CA6 /* MessageSession+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MessageSession+CoreDataProperties.h"; sourceTree = "<group>"; };
 		74B90DC81CC32153004C4CA6 /* MessageSession+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MessageSession+CoreDataProperties.m"; sourceTree = "<group>"; };
+		74C6B1C71E190F80006E5821 /* YYTextAsyncLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextAsyncLayer.h; sourceTree = "<group>"; };
+		74C6B1C81E190F80006E5821 /* YYTextAsyncLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextAsyncLayer.m; sourceTree = "<group>"; };
+		74C6B1CC1E19102A006E5821 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		74C6B1CD1E19102A006E5821 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		74CB658C1CC20D680071E1A3 /* WeChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeChat.xcdatamodel; sourceTree = "<group>"; };
 		74CB658E1CC21F5C0071E1A3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		74CB658F1CC21F5C0071E1A3 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
@@ -87,6 +144,9 @@
 		74CB65AE1CC242C10071E1A3 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		74CB65B01CC244210071E1A3 /* ChatSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatSessionViewController.h; sourceTree = "<group>"; };
 		74CB65B11CC244210071E1A3 /* ChatSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatSessionViewController.m; sourceTree = "<group>"; };
+		74F68FEB1E0624C30021F303 /* TEExpressionNamesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEExpressionNamesManager.h; sourceTree = "<group>"; };
+		74F68FEC1E0624C30021F303 /* TEExpressionNamesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEExpressionNamesManager.m; sourceTree = "<group>"; };
+		74F68FEE1E06254E0021F303 /* TEExpression.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TEExpression.bundle; sourceTree = "<group>"; };
 		DBAE8A081C9F94550030BF18 /* ChatExtraPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExtraPanel.h; sourceTree = "<group>"; };
 		DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatExtraPanel.m; sourceTree = "<group>"; };
 		DBAE8A0B1C9F94790030BF18 /* ChatExpressionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatExpressionPanel.h; sourceTree = "<group>"; };
@@ -94,7 +154,7 @@
 		DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeChat.pch; sourceTree = "<group>"; };
 		DBAE8A0F1C9FD0D20030BF18 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		DBAE8A101C9FD0D20030BF18 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		DBAE8A121C9FEA450030BF18 /* Expression_String.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expression_String.plist; sourceTree = "<group>"; };
+		DBAE8A121C9FEA450030BF18 /* TEExpressionNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TEExpressionNames.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +185,8 @@
 		74372DA71C9EB14000A27DAD = {
 			isa = PBXGroup;
 			children = (
+				74AEE8201E052BBF00919508 /* Helper */,
+				74AEE8031E052A2800919508 /* TextLayout */,
 				748F2E631CC20CDB00B4E2CB /* CoreData */,
 				DBAE8A071C9F93780030BF18 /* Views */,
 				74372DE61C9EC3DA00A27DAD /* Category */,
@@ -162,7 +224,8 @@
 				74372DC41C9EB14000A27DAD /* Info.plist */,
 				74372DB31C9EB14000A27DAD /* Supporting Files */,
 				DBAE8A0E1C9F9E630030BF18 /* WeChat.pch */,
-				DBAE8A121C9FEA450030BF18 /* Expression_String.plist */,
+				DBAE8A121C9FEA450030BF18 /* TEExpressionNames.plist */,
+				74F68FEE1E06254E0021F303 /* TEExpression.bundle */,
 			);
 			path = WeChat;
 			sourceTree = "<group>";
@@ -196,6 +259,12 @@
 		74372DE61C9EC3DA00A27DAD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				74AEE8281E052F4500919508 /* NSDate+Utils.h */,
+				74AEE8291E052F4500919508 /* NSDate+Utils.m */,
+				74AEE82A1E052F4500919508 /* NSString+UUID.h */,
+				74AEE82B1E052F4500919508 /* NSString+UUID.m */,
+				74AEE8251E052CE500919508 /* TESizeAspect.h */,
+				74AEE8261E052CE500919508 /* TESizeAspect.m */,
 				74372DE71C9EC3DA00A27DAD /* CALayer+Additions.h */,
 				74372DE81C9EC3DA00A27DAD /* CALayer+Additions.m */,
 				DBAE8A0F1C9FD0D20030BF18 /* UIView+Frame.h */,
@@ -219,6 +288,51 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		74AEE8031E052A2800919508 /* TextLayout */ = {
+			isa = PBXGroup;
+			children = (
+				74F68FEB1E0624C30021F303 /* TEExpressionNamesManager.h */,
+				74F68FEC1E0624C30021F303 /* TEExpressionNamesManager.m */,
+				74AEE8171E052B4400919508 /* TEChatMessage.h */,
+				74AEE8181E052B4400919508 /* TEChatMessage.m */,
+				74AEE8191E052B4400919508 /* TEChatXMLReader.h */,
+				74AEE81A1E052B4400919508 /* TEChatXMLReader.m */,
+				74AEE81B1E052B4400919508 /* TEMsgSubItem.h */,
+				74AEE81C1E052B4400919508 /* TEMsgSubItem.m */,
+				74AEE8041E052A2800919508 /* TEMagnifiterView.h */,
+				74AEE8051E052A2800919508 /* TEMagnifiterView.m */,
+				74AEE8061E052A2800919508 /* TETextAttibuteConfig.h */,
+				74AEE8071E052A2800919508 /* TETextAttibuteConfig.m */,
+				74AEE8081E052A2800919508 /* TETextFrameParser.h */,
+				74AEE8091E052A2800919508 /* TETextFrameParser.m */,
+				74AEE80A1E052A2800919508 /* TETextLayoutModel.h */,
+				74AEE80B1E052A2800919508 /* TETextLayoutModel.m */,
+				74AEE80C1E052A2800919508 /* TETextLayoutModelProtocol.h */,
+				74AEE80D1E052A2800919508 /* TETextLayoutView.h */,
+				74AEE80E1E052A2800919508 /* TETextLayoutView.m */,
+				74AEE80F1E052A2800919508 /* TETextTouchUtils.h */,
+				74AEE8101E052A2800919508 /* TETextTouchUtils.m */,
+			);
+			path = TextLayout;
+			sourceTree = "<group>";
+		};
+		74AEE8201E052BBF00919508 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				74AEE8211E052BBF00919508 /* Xml */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		74AEE8211E052BBF00919508 /* Xml */ = {
+			isa = PBXGroup;
+			children = (
+				74AEE8221E052BBF00919508 /* XMLDictionary.h */,
+				74AEE8231E052BBF00919508 /* XMLDictionary.m */,
+			);
+			path = Xml;
+			sourceTree = "<group>";
+		};
 		74CB65911CC2385F0071E1A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,10 +351,20 @@
 		DBAE8A071C9F93780030BF18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				74AEE8341E0530C800919508 /* TEBubbleCellInnerLayout.h */,
+				74AEE8351E0530C800919508 /* TEBubbleCellInnerLayout.m */,
+				74AEE8311E05302400919508 /* TEMessageView.h */,
+				74AEE8321E05302400919508 /* TEMessageView.m */,
+				74AEE82E1E052FD500919508 /* TEBubbleCell.h */,
+				74AEE82F1E052FD500919508 /* TEBubbleCell.m */,
 				DBAE8A081C9F94550030BF18 /* ChatExtraPanel.h */,
 				DBAE8A091C9F94550030BF18 /* ChatExtraPanel.m */,
 				DBAE8A0B1C9F94790030BF18 /* ChatExpressionPanel.h */,
 				DBAE8A0C1C9F94790030BF18 /* ChatExpressionPanel.m */,
+				74C6B1C71E190F80006E5821 /* YYTextAsyncLayer.h */,
+				74C6B1C81E190F80006E5821 /* YYTextAsyncLayer.m */,
+				74C6B1CC1E19102A006E5821 /* AsyncImageView.h */,
+				74C6B1CD1E19102A006E5821 /* AsyncImageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +437,7 @@
 					74372DAF1C9EB14000A27DAD = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = M7R5TQ8AQY;
+						LastSwiftMigration = 0810;
 					};
 					74372DC81C9EB14000A27DAD = {
 						CreatedOnToolsVersion = 7.2;
@@ -349,10 +474,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F68FEF1E06254E0021F303 /* TEExpression.bundle in Resources */,
 				74372DC31C9EB14000A27DAD /* LaunchScreen.storyboard in Resources */,
 				74372DC01C9EB14000A27DAD /* Assets.xcassets in Resources */,
 				74372DBE1C9EB14000A27DAD /* Main.storyboard in Resources */,
-				DBAE8A131C9FEA450030BF18 /* Expression_String.plist in Resources */,
+				DBAE8A131C9FEA450030BF18 /* TEExpressionNames.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,23 +503,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74AEE81D1E052B4400919508 /* TEChatMessage.m in Sources */,
 				DBAE8A111C9FD0D20030BF18 /* UIView+Frame.m in Sources */,
+				74AEE81F1E052B4400919508 /* TEMsgSubItem.m in Sources */,
+				74AEE8331E05302400919508 /* TEMessageView.m in Sources */,
+				74AEE8301E052FD500919508 /* TEBubbleCell.m in Sources */,
+				74C6B1C91E190F80006E5821 /* YYTextAsyncLayer.m in Sources */,
 				74372DBB1C9EB14000A27DAD /* ChatViewController.m in Sources */,
+				74AEE82D1E052F4500919508 /* NSString+UUID.m in Sources */,
+				74AEE8141E052A2800919508 /* TETextLayoutModel.m in Sources */,
 				74B90DCC1CC32153004C4CA6 /* MessageSession+CoreDataProperties.m in Sources */,
 				74372DEC1C9ED9B800A27DAD /* ChatTableViewController.m in Sources */,
 				74B90DCA1CC32153004C4CA6 /* Message+CoreDataProperties.m in Sources */,
+				74AEE82C1E052F4500919508 /* NSDate+Utils.m in Sources */,
+				74AEE8241E052BBF00919508 /* XMLDictionary.m in Sources */,
 				74372DE91C9EC3DA00A27DAD /* CALayer+Additions.m in Sources */,
 				74372DB81C9EB14000A27DAD /* AppDelegate.m in Sources */,
 				74372DB51C9EB14000A27DAD /* main.m in Sources */,
+				74AEE8131E052A2800919508 /* TETextFrameParser.m in Sources */,
+				74AEE8271E052CE500919508 /* TESizeAspect.m in Sources */,
+				74C6B1CE1E19102A006E5821 /* AsyncImageView.m in Sources */,
+				74AEE8161E052A2800919508 /* TETextTouchUtils.m in Sources */,
 				74CB65B21CC244210071E1A3 /* ChatSessionViewController.m in Sources */,
 				DBAE8A0A1C9F94550030BF18 /* ChatExtraPanel.m in Sources */,
 				DBAE8A0D1C9F94790030BF18 /* ChatExpressionPanel.m in Sources */,
+				74AEE8111E052A2800919508 /* TEMagnifiterView.m in Sources */,
+				74AEE81E1E052B4400919508 /* TEChatXMLReader.m in Sources */,
 				74CB65901CC21F5C0071E1A3 /* CoreDataHelper.m in Sources */,
 				74CB658D1CC20D680071E1A3 /* WeChat.xcdatamodeld in Sources */,
+				74AEE8151E052A2800919508 /* TETextLayoutView.m in Sources */,
 				74B90DC91CC32153004C4CA6 /* Message.m in Sources */,
 				74B90DCB1CC32153004C4CA6 /* MessageSession.m in Sources */,
 				74CB65AF1CC242C10071E1A3 /* CoreDataTableViewController.m in Sources */,
+				74AEE8361E0530C800919508 /* TEBubbleCellInnerLayout.m in Sources */,
+				74AEE8121E052A2800919508 /* TETextAttibuteConfig.m in Sources */,
 				7420A45F1CC369D8003033AC /* DataFactory.m in Sources */,
+				74F68FED1E0624C30021F303 /* TEExpressionNamesManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = M7R5TQ8AQY;
 				GCC_PREFIX_HEADER = WeChat/WeChat.pch;
 				INFOPLIST_FILE = WeChat/Info.plist;
@@ -543,6 +689,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f848d90b-0238-46a6-a113-069312587876";
 				PROVISIONING_PROFILE_SPECIFIER = combar_development_ent;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -550,6 +698,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = WeChat/WeChat.pch;
 				INFOPLIST_FILE = WeChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -557,6 +706,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.v2tech.commbarEnt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e4c6fe16-2704-499b-b8b4-04db72022fd9";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

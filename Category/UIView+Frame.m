@@ -10,6 +10,14 @@
 
 @implementation UIView (Frame)
 
+- (CGPoint) origin {
+    return self.frame.origin;
+}
+
+- (void) setOrigin:(CGPoint) point {
+    self.frame = CGRectMake(point.x, point.y, self.frame.size.width, self.frame.size.height);
+}
+
 - (CGFloat)x
 {
     return self.frame.origin.x;
@@ -53,5 +61,26 @@
     CGRect frame = self.frame;
     self.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height);
 }
+
+- (CGPoint)leftTop
+{
+    return self.origin;
+}
+
+- (CGPoint)rightTop
+{
+    return CGPointMake(self.x + self.width, self.y);
+}
+
+- (CGPoint)leftBottom
+{
+    return CGPointMake(self.x, self.y + self.height);
+}
+
+- (CGPoint)rightBottom
+{
+    return CGPointMake(self.x + self.width, self.y + self.height);
+}
+
 
 @end
